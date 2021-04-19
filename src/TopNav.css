@@ -1,0 +1,14 @@
+.bar-container{ /*border: gold solid 1px;*/
+    height: 100%;
+    width: 100%;
+}
+.TopRightBar{ /*border: gold solid 1px;*/
+    height: 100%;
+    width: 100%;
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin: auto;
+}

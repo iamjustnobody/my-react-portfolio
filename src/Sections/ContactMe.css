@@ -1,0 +1,193 @@
+.contactme-container {
+    min-height: 100vh;
+}
+.heading{
+    text-align: center;
+    font-family: 'Special Elite', cursive;
+    color:hotpink;
+}
+.cards-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 0;
+    flex-wrap:wrap;
+    position: relative;
+}
+.cards-container .cards{
+    position: relative;
+    width: 320px;
+    height:200px;
+    color:#ffff;
+    background-color: #111;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 30px;
+    transition: 0.5s;
+}
+.cards-container .cards:hover{
+    transform: translateY(-20px);
+}
+.cards-container .cards::before{
+    content: '';
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #ffbc00,#ff0058);
+}
+.cards-container .cards::after{
+    content: '';
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #ffbc00,#ff0058);
+    filter:blur(30px);
+}
+.cards-container .cards:nth-child(2)::before,
+.cards-container .cards:nth-child(2)::after{
+    background: linear-gradient(315deg, #03a9f4,#ff0058);
+}
+.cards-container .cards:nth-child(3)::before,
+.cards-container .cards:nth-child(3)::after{
+    background: linear-gradient(315deg, #4dff03,#00d0ff);
+}
+
+.cards-container .cards .helper{
+    position: absolute;
+    top:6px;
+    left:6px;
+    right:6px;
+    bottom: 6px;
+    background: rgba(0,0,0,0.6);
+    z-index: 1;
+}
+.cards-container .cards .helper::before{
+    content: '';
+    position: absolute;
+    top:0;
+    left:0;
+    width: 50%;
+    height: 100%;
+    background: rgba(255,255,255,0.1);
+    pointer-events: none;
+}
+.cards-container .cards .content{ /*border:white solid 1px;*/
+    position: relative;
+    z-index: 2;
+    padding: 20px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+  /*  height: 100%;*/
+}
+
+
+.contact-icons { /*border:white solid 1px;*/
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 33.33%;
+    text-align: center;
+    justify-content: center;
+}
+.contact-icons i {
+    color: #f35166;
+    cursor: pointer;
+    font-size: 1.7rem;
+    position: relative;
+    user-select: none;
+    transition: all 0.2s ease-in 0s;
+}
+.contact-text { /*border:white solid 1px;*/
+    display: flex;
+    padding-top: 0.7rem; /*margin-top: 0.7rem;*/
+    width: 100%;
+    font-family: 'Margarine', cursive;
+    height: 33.33%;
+    font-size: 1.2rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-links { /*border:white solid 1px;*/
+    padding-top: 0.7rem;/*margin-top: 0.7rem;*/
+    display: flex;
+    font-size: 1.1rem;
+    font-family: 'Baloo Bhai 2', cursive;
+    width: 100%;
+    height: 33.33%;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.contact-links i { /*border:white solid 1px;*/
+    cursor: pointer;
+    margin-left: 0.3rem;
+    margin-right: 0.3rem;
+    display: block;
+    font-size: 1.8rem;
+    position: relative;
+    text-align: center;
+
+    padding-left: 0.1rem;
+    padding-right: 0.1rem;
+    user-select: none;
+}
+
+.contact-links a { /*border:white solid 1px;*/
+    text-decoration: none;
+}
+
+.contact-links i:hover {
+    box-shadow: 2px 2px 4px gray;
+
+    border-radius: 20%;
+}
+
+.contact-links #github {
+    color: rgba(0, 0, 0, 0.884);
+}
+
+.contact-links:hover #github {
+    color: rgb(0, 0, 0);
+}
+
+.contact-links #facebook {
+    color: rgba(28, 28, 231, 0.938);
+}
+
+.contact-links:hover #facebook {
+    color: rgb(28, 28, 231);
+}
+
+.contact-links #instagram {
+    color: rgba(214, 84, 45, 0.89);
+}
+
+.contact-links:hover #instagram {
+    color: rgb(214, 84, 45);
+}
+
+.contact-links #linkedin {
+    color: #3d8eb7ea;
+}
+
+.contact-links:hover #linkedin {
+    color: #3d8eb7;
+}
+
+.contact-links #twitter {
+    color: #00b7fff1;
+}
+
+.contact-links:hover #twitter {
+    color: #00b7ff;
+}

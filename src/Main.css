@@ -1,0 +1,8 @@
+.content-container{
+  /*  background: linear-gradient(to right top,#1c1c1c,#494949);*/
+    background-image: url("./bg.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+/*    background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.7)),url("./bg.jpg") no-repeat;
+    background-size: cover;*/
+}
