@@ -1,4 +1,9 @@
 .home-container{
-  /*  min-height: 100vh;*/
-
+  /*  min-height: 100vh; opt*/
+ /*   display: flex;
+    justify-content: center;
+    width: 100%;*/
+}
+#tsparticles{
+   /* width: 100%; this should be combined with display flex above*/
 }

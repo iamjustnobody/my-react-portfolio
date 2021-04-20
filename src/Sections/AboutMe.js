@@ -6,6 +6,7 @@ import wordcloud1 from '../wordcloud1.png';
 export const AboutMe = () =>{
     return (
         <div id="AboutMe" className="aboutme-container">
+            <h1 className="heading">About me</h1>
             <div className="card"
                  data-aos="flip-left"
                  data-aos-easing="ease-out-cubic"

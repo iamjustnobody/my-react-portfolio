@@ -27,6 +27,10 @@ export const Skills = () =>{
                     <i className="fab java fa-java"></i>
                     <p>Java</p>
                 </li>
+                <li>
+                    <i className="fab node fa-node"></i>
+                    <p>Node</p>
+                </li>
             </div>
         </div>
     );

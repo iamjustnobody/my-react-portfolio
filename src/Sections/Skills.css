@@ -3,6 +3,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    /*justify-content: space-evenly;*/
+    justify-content:center;
 }
 .heading{
     font-family: 'Special Elite', cursive;
@@ -23,3 +25,26 @@
     margin: 2rem;
     text-align: center;
 }
+.techs:hover{
+    border: 1px solid dimgrey;
+}
+.techs li{
+    list-style-type: none;
+    font-size:1rem;
+    font-weight:700;
+    width:12%
+}
+.techs i{
+    font-size:3rem;
+    margin:1.1rem;
+}
+.techs .html{color:rgb(204,78,29)}
+.techs .css{color:#5898dc}
+.techs .javascript{color:#9300ff}
+.techs .react{color:#29c2ff}
+.techs .java{color:red}
+.techs .node{color:green}
+.techs .bootstrap{color:#9300ff}
+.techs .sass{color:#c300ff}
+.techs .typescript{color:#042f67}
+.techs .python{color:#82e1ff}
