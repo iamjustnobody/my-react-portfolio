@@ -26,17 +26,18 @@ function App() {//console.log(window.pageYOffset,window.scrollY);//0 0
         return () => {
             document.removeEventListener("scroll",handleYScrolling);
         }
-    }, [])
+    }, [setY,y])
     useEffect(()=>{AOS.init({
         duration : 2000
     })},[]);
   return (
       <div>
+          <div className={y===0?"AppTransparent-bg":"App-bg"}>
               <div className={y===0?"AppTransparent":"App"}>
-                  <img src={logo} className="App-logo" alt="logo" />
+                  {y==0?<img src={logo} className="App-logo" alt="logo" />:<></>}
                   <TopNav y={y}/>
               </div>
-
+          </div>
 
           <Main y={y}/>
       </div>

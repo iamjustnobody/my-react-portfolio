@@ -1,32 +1,47 @@
-.App{
-  background-color: hotpink;
+.App-bg{
+  background:linear-gradient(to right top,#65dfc9,#6cdbeb);
+  /*background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);*/
+  /*background:linear-gradient(to right top,rgba(246,211,101,0.6),rgba(253,160,133,0.1));*/
+  /*background:linear-gradient(to right top,rgba(101,223,201,0.6),rgba(108,219,235,0.1));*/
   height:49px;
-  display: inline-flex;
-  align-content: center;
+
   z-index: 3;
   position:fixed;
   top:0;
   right: 0;
   left:0;
   width: 100%;
+  box-shadow: 3px 2px 10px white;
 }
-.AppTransparent{/*#282c34*/
-  background-color: rgba(255,255,255,0);
-  height:49px;
+.App{
+  /*background:linear-gradient(to left bottom, rgba(255,255,255,0.6),rgba(255,255,255,0.1));*/
   display: inline-flex;
   align-content: center;
+  height: 49px; width: 100%;/*100%*/
+  margin: 0;
+}
+.AppTransparent-bg{/*#282c34*/
+  background-color: rgba(255,255,255,0);
+  height:49px;
+
   position:fixed;
   top:0;
   right: 0;
   left:0;
   z-index: 0;
   width: 100%;
-
 }
-
+.AppTransparent{
+  background-color: rgba(255,255,255,0);
+  height:49px; width: 100%; margin: 0; /*100%*/
+  display: inline-flex;
+  align-content: center;
+  position:fixed;
+}
 .App-logo {
   height: 100%;/*7vmin;*/
   pointer-events: none;
+  flex:1;
   size:1px;
 }
 

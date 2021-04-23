@@ -9,20 +9,31 @@
 .heading{
     font-family: 'Special Elite', cursive;
 }
+.techs-bg{
+    width: 80%;
+    background:linear-gradient(to right top,rgba(101,223,201,0.6),rgba(108,219,235,0.1));
+    /*#65dfc9,#6cdbeb*/
+    /*background:linear-gradient(to right top,rgba(246,211,101,0.6),rgba(253,160,133,0.1));*/
+    /* #f6d365 0%, #fda085 100%*/
+    border-radius: 20px;
+}
 .techs {
-
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    width: 80%;
+    /*width: 80%; if no techs-bg; width:100% expand beyond techs.bg; so using margin instead*/
+    margin:0;
      background: #e7dddd5c;
-
-    box-shadow: 3px 2px 10px gray;
+    background:linear-gradient(to left bottom, rgba(255,255,255,0.6),rgba(255,255,255,0.1));
+    /*box-shadow: 3px 2px 10px gray;*/
+    box-shadow: 12px 8px 15px darkseagreen;
+    /*box-shadow: 12px 8px 15px #ffcc99; */
+    /*salmon*/
     min-height: 12rem;
     border-radius: 20px;
     padding: 3rem;
     flex-wrap: wrap;
-    margin: 2rem;
+    /*margin: 2rem;*/
     text-align: center;
 }
 .techs:hover{

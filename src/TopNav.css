@@ -11,8 +11,9 @@
     justify-content: flex-end;
     align-items: center;
     margin: auto;
+    /*color:darkolivegreen;*/
 }
-
+/*.TopRightBar.top{color:white}*/
 .TopRightBar li{/*border:1px solid white; */
     height:100%;
     text-align: center;
@@ -21,15 +22,19 @@
     padding-left: 12px;
     padding-right: 12px;
     font-family: 'Original Surfer', cursive;
+    /*color:white or darkolivegreen*/
 }
 .TopRightBar li:hover{
     background-color: rgba(255,255,255,0.3);
     font-weight: 1000;
 }
 
-
+/*.TopRightBar li NavHashLink{color: white}*/
+.TopRightBar li a.top{color: yellowgreen}
+.TopRightBar li a{color: darkolivegreen}
 .selected{
     font-weight:bold;
-    border-bottom: 5px solid red;
-    color:red
+    border-bottom: 2px solid darkolivegreen;/*#ff6f47;*/
+    /*color:darkolivegreen or #ff6f47*/
 }
+.selected.top{border-bottom: 2px solid yellowgreen;}
