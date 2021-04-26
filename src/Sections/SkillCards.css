@@ -1,0 +1,423 @@
+.skills-container{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /*justify-content: space-evenly;*/
+    justify-content:center;
+}
+/*heading in maincss*/
+.techs-container{
+    /*background:#232427;*/
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    text-align: center;
+    /*
+    margin:0;
+    width: 80%;
+    min-height: 12rem;
+    border-radius: 20px;
+    padding: 3rem;
+    */
+    max-width: 1200px;
+    margin: 40px 0;
+}
+.techs-container .tech-card{
+    position: relative;
+    min-width: 200px;
+    height: 180px;
+    box-shadow: inset 5px 5px 5px rgba(0,0,0,0.2),
+     inset -5px -5px 15px rgba(255,255,255,0.1),
+       5px 5px 15px rgba(0,0,0,0.3),
+     -5px -5px 15px rgba(255,255,255,0.1);
+    border-radius: 15px;
+    margin:30px
+}
+.techs-container .tech-card::before{
+    content: "";
+    position: relative;
+    top:0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: rgba(255,255,255,0.1)
+}
+.techs-container .tech-card .tech-box{
+    position: absolute;
+    top:5px;
+    left:5px;
+    right:5px;
+    bottom:5px;
+    background:#2a2b2f;
+    border-radius: 15px;
+    border:2px solid #1e1f23;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    transition: 0.5s;
+
+    overflow: hidden;
+}
+.techs-container .tech-card .tech-box::before{
+    content: "";
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+background: rgba(255,255,255,0.05);
+    pointer-events: none;
+}
+.techs-container .tech-card .tech-box:hover{
+    transform: translateY(-50px);
+    box-shadow: 0 40px 70px rgba(0,0,0,0.5);
+}
+.techs-container .tech-card .tech-box .tech-content{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+
+}
+.techs-container .tech-card .tech-box .tech-content i{
+    font-size: 52px;
+    margin-top:12px;
+}
+.techs-container .tech-card .tech-box .tech-content div{
+    margin: 12px 10px 30px;
+    background: #000;
+    /*border-radius: 20px;*/
+    padding: 7px 10px;
+    font-weight: 50;
+    color:white;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    /*below for before after children*/
+    transition: 0.5s;
+    position: relative;
+    /*display: inline-flex;
+    justify-content: space-evenly;*/
+    -webkit-box-reflect: below 1px linear-gradient(transparent,#0003);
+}
+.techs-container .tech-card:nth-child(1) .tech-box .tech-content div{
+    background: rgb(204,78,29); /*#e91e63;*/
+
+    background: transparent;
+    color:rgb(204,78,29);
+}
+.techs-container .tech-card:nth-child(2) .tech-box .tech-content div{
+    background: #5898dc; /*#2196f3;*/
+
+    background: transparent;
+    color:#5898dc;
+}
+.techs-container .tech-card:nth-child(3) .tech-box .tech-content div{
+    background: #9300ff; /*#97dc47;*/
+
+    background: transparent;
+    color:#9300ff;
+}
+.techs-container .tech-card:nth-child(4) .tech-box .tech-content div{
+    background: #2196f3;
+
+    background: transparent;
+    color:#2196f3;
+}
+.techs-container .tech-card:nth-child(5) .tech-box .tech-content div{
+    background: #e91e63;
+
+    background: transparent;
+    color: #e91e63;
+}
+.techs-container .tech-card:nth-child(6) .tech-box .tech-content div{
+    background: #97dc47;
+
+    background: transparent;
+    color:#97dc47;
+}
+.techs-container .tech-card .tech-box .tech-content .node{color:#97dc47;}
+.techs-container .tech-card .tech-box .tech-content .html{color:rgb(204,78,29)}
+.techs-container .tech-card .tech-box .tech-content .css{color:#5898dc}
+.techs-container .tech-card .tech-box .tech-content .javascript{color:#9300ff}
+.techs-container .tech-card .tech-box .tech-content .java{color:#e91e63}
+.techs-container .tech-card .tech-box .tech-content .react{color:#29c2ff}
+
+
+.techs-container .tech-card .tech-box .tech-content div:before{
+    content: " ";
+    position: absolute;
+    top:0;
+    left:0;
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    transition: 0.5s;
+}
+.techs-container .tech-card .tech-box .tech-content div:after{
+    content: "";
+    position: absolute;
+    bottom:0;
+    right:0;
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    transition: 0.5s;
+    margin-bottom: 0;
+    text-align: end;
+}
+.techs-container .tech-card .tech-box .tech-content div{background: white}
+
+.techs-container .tech-card:nth-child(1) .tech-box .tech-content div::before{
+    border-top:2px solid rgb(204,78,29);
+    border-left:2px solid rgb(204,78,29);
+}
+.techs-container .tech-card:nth-child(1) .tech-box .tech-content div::after{
+    border-bottom:2px solid rgb(204,78,29);
+    border-right:2px solid rgb(204,78,29);
+}
+.techs-container .tech-card:nth-child(2) .tech-box .tech-content div::before{
+    border-top:2px solid #5898dc;
+    border-left:2px solid #5898dc;
+}
+.techs-container .tech-card:nth-child(2) .tech-box .tech-content div::after{
+    border-bottom:2px solid #5898dc;
+    border-right:2px solid #5898dc;
+}
+.techs-container .tech-card:nth-child(3) .tech-box .tech-content div::before{
+    border-top:2px solid #9300ff;
+    border-left:2px solid #9300ff;
+}
+.techs-container .tech-card:nth-child(3) .tech-box .tech-content div::after{
+    border-bottom:2px solid #9300ff;
+    border-right:2px solid #9300ff;
+}
+.techs-container .tech-card:nth-child(4) .tech-box .tech-content div::before{
+    border-top:2px solid #2196f3;
+    border-left:2px solid #2196f3;
+}
+.techs-container .tech-card:nth-child(4) .tech-box .tech-content div::after{
+    border-bottom:2px solid #2196f3;
+    border-right:2px solid #2196f3;
+}
+.techs-container .tech-card:nth-child(5) .tech-box .tech-content div::before{
+    border-top:2px solid #e91e63;
+    border-left:2px solid #e91e63;
+}
+.techs-container .tech-card:nth-child(5) .tech-box .tech-content div::after{
+    border-bottom:2px solid #e91e63;
+    border-right:2px solid #e91e63;
+}
+.techs-container .tech-card:nth-child(6) .tech-box .tech-content div::before{
+    border-top:2px solid #97dc47;
+    border-left:2px solid #97dc47;
+}
+.techs-container .tech-card:nth-child(6) .tech-box .tech-content div::after{
+    border-bottom:2px solid #97dc47;
+    border-right:2px solid #97dc47;
+}
+
+.techs-container .tech-card .tech-box .tech-content div:Hover{
+    color:#fff;
+}
+.techs-container .tech-card .tech-box .tech-content div:hover:before{
+    width: 100%;
+    height: 100%;
+}
+.techs-container .tech-card .tech-box .tech-content div:hover:after{
+    width: 100%;
+    height: 100%;
+}
+.techs-container .tech-card:nth-child(1) .tech-box .tech-content div:Hover{
+    background: rgb(204,78,29);
+    box-shadow: 0 0 50px rgb(204,78,29);
+}
+.techs-container .tech-card:nth-child(2) .tech-box .tech-content div:Hover{
+    background: #5898dc;
+    box-shadow: 0 0 50px #5898dc;
+}
+.techs-container .tech-card:nth-child(3) .tech-box .tech-content div:Hover{
+    background:  #9300ff;
+    box-shadow: 0 0 50px  #9300ff;
+}
+.techs-container .tech-card:nth-child(4) .tech-box .tech-content div:hover{
+    background: #2196f3;
+    box-shadow: 0 0 50px #2196f3;
+}
+.techs-container .tech-card:nth-child(5) .tech-box .tech-content div:hover{
+    background: #e91e63;
+    box-shadow: 0 0 50px #e91e63;
+}
+.techs-container .tech-card:nth-child(6) .tech-box .tech-content div:hover{
+    background:  #97dc47;
+    box-shadow: 0 0 50px #97dc47;
+}
+
+
+
+
+/*modal*/
+
+/*#myModal{display: none or block}*/
+/* 弹窗背景 */
+.modal { /*border:5px solid white;*/
+    display: block;
+    position: fixed;
+    z-index: 1; /*or higher, 5, cover topbar z=3 or not*/
+    padding-top: 108px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.8);
+    /*filter:blur(20px) makes modal blur not making bg blur*/
+}
+
+/* 弹窗内容 */
+.modal-content {/*border:5px solid white;*/
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    width: 50%;
+    height:70%;
+    max-width: 1200px;
+    border-radius: 20px;
+    padding-bottom: 12px;
+}
+
+/* 关闭按钮 */
+.close {
+    color: white;
+    position: absolute;
+    top: 70px;
+    right: 25px;
+    font-size: 35px;
+    font-weight: bold;
+}
+.close:hover,
+.close:focus {
+    color: #999;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.myInnerSlides{ /*border:5px solid green;*/
+    height:80%;
+    position: relative;
+    border-radius: 20px;
+}
+
+/* 上一页 & 下一页 按钮 */
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -50px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    -webkit-user-select: none;
+}
+.prev{left:0}
+/* 定位下一页按钮到右侧 */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+/* 鼠标移动上去修改背景色为黑色 */
+.prev:hover,
+.next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* 页数(1/3 etc) */
+.numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+
+.myInnerSlides img{
+    /*margin-bottom: 4px;*/
+    width:100%;
+    height: 100%;
+    border-radius: 20px;
+}
+
+/* 标记符号 */
+.dots{
+    position: absolute;
+    bottom: 8px;
+    right:50%
+}
+.dot {
+
+    cursor:pointer;
+    height: 13px;
+    width: 13px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.dot.active, .dot:hover {
+    background-color: #717171;
+}
+.caption{
+    text-align: center;
+    padding: 5px 16px;
+    color: black;
+    font-size: 15px;
+    /*:1px solid red;
+    width:100%*/
+}
+.bottom-overview{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    /*justify-content: space-evenly;*/
+    justify-content: center;
+    width: 100%;
+    /*height: 20%;*/
+}
+.demo {
+    opacity: 0.6;
+    width: 100px;
+    margin:10px
+}
+.bottom-overview img{border-radius: 20px}
+.demo.active,
+.demo:hover {
+    opacity: 1;
+}
+
+
+/* 淡出动画 */
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+
+@keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}

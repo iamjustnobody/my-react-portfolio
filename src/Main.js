@@ -5,15 +5,17 @@ import {Skills} from "./Sections/Skills";
 import {Portfolio} from "./Sections/Portfolio";
 import {ContactMe} from "./Sections/ContactMe";
 import "./Main.css";
+import {SkillCards} from "./Sections/SkillCards";
+import {ProjectCards} from "./Sections/ProjectCards";
 
-export const Main =()=>{
+export const Main =(props)=>{
     return (
         <div className="content-container">
             <Home />
             <div>
                 <AboutMe />
-                <Skills />
-                <Portfolio />
+                <SkillCards setGlobalBlur={props.setGlobalBlur} globalBlur={props.globalBlur}/>
+                <ProjectCards setGlobalBlur={props.setGlobalBlur} globalBlur={props.globalBlur}/>
                 <ContactMe />
             </div>
         </div>

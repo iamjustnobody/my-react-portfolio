@@ -6,12 +6,10 @@
     /*justify-content: space-evenly;*/
     justify-content:center;
 }
-.heading{
-    font-family: 'Special Elite', cursive;
-}
+/*heading in maincss*/
 .techs-bg{
     width: 80%;
-    background:linear-gradient(to right top,rgba(101,223,201,0.6),rgba(108,219,235,0.1));
+    background:linear-gradient(to right top,rgba(101,223,201,0.7),rgba(108,219,235,0.3));
     /*#65dfc9,#6cdbeb*/
     /*background:linear-gradient(to right top,rgba(246,211,101,0.6),rgba(253,160,133,0.1));*/
     /* #f6d365 0%, #fda085 100%*/
@@ -24,7 +22,7 @@
     /*width: 80%; if no techs-bg; width:100% expand beyond techs.bg; so using margin instead*/
     margin:0;
      background: #e7dddd5c;
-    background:linear-gradient(to left bottom, rgba(255,255,255,0.6),rgba(255,255,255,0.1));
+    background:linear-gradient(to left bottom, rgba(0,0,0,0.4),rgba(0,0,0,0.1));
     /*box-shadow: 3px 2px 10px gray;*/
     box-shadow: 12px 8px 15px darkseagreen;
     /*box-shadow: 12px 8px 15px #ffcc99; */
@@ -48,6 +46,10 @@
 .techs i{
     font-size:3rem;
     margin:1.1rem;
+    background-color: white;
+}
+.techs li p{
+    color:darkolivegreen;
 }
 .techs .html{color:rgb(204,78,29)}
 .techs .css{color:#5898dc}

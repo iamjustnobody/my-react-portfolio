@@ -25,15 +25,17 @@
     margin: 1rem;
     box-shadow: 9px 8px 10px grey;
     border-radius: 10px;
+    transition: 0.5s;
 }
-/*.project:hover*/
-.project-image:hover{ transform: scale(1.06) translateZ(10px);}
+/*.project:hover{height:500px}*/
+.project-image:hover{ transform: scale(1.06) translateZ(10px);opacity: 1}
 .project-image{
     width: 100%;
     border-bottom: 1px solid #55198b;
     height:70%;
     border-radius: 10px;
-
+    transition: 0.5s;
+    /*opacity: 0.5;*/
 }
 .project-image:hover{
     cursor:pointer;
@@ -195,7 +197,7 @@
     top: 0;
 }
 
-img {
+.myInnerSlides img {
     /*margin-bottom: 4px;*/
     width:100%;
     height: 100%;
@@ -245,7 +247,7 @@ img {
     width: 100px;
     margin:10px
 }
-
+.bottom-overview img{border-radius: 20px}
 .demo.active,
 .demo:hover {
     opacity: 1;

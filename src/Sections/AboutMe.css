@@ -11,6 +11,8 @@
     align-items: center;
     justify-content: center;
 }
+
+
 .card{
     width: 360px;
     height: 560px;
@@ -90,14 +92,14 @@
     justify-content: center;
 }
 .name{
-    color:#ffcc99;
+    /*color:#ffcc99;*/
     font-size:35px;
     margin:20px 5px;
     font-family: 'Amaranth', sans-serif;
             /*'Averia Sans Libre', cursive; 'Stylish', sans-serif; font-family: 'Electrolize', sans-serif;*/
 }
 .profession{
-    color:#ffcc99;
+    /*color:#ffcc99;*/
     font-size:25px;
     margin:20px 5px;
     font-family: 'Original Surfer', cursive;
@@ -108,16 +110,175 @@
 
 .biography{
     color:#fff;
-    font-size: 22px;
-    background-color: rgba(0,0,0,0.4);
+    /*font-size: 22px;*/
+    background-color: darkolivegreen;/*rgba(0,0,0,0.4);*/
     width: 90%;
     text-align: center;
     padding: 10px;
     margin-bottom: 10px;
-    font-family: 'Merienda', cursive;
+    /*font-family: 'Merienda', cursive;*/
     /*
     font-family: 'Handlee', cursive;
 font-family: 'Marck Script', cursive; font-family: 'Nothing You Could Do', cursive;
-     */
+    move to below */
 }
 
+
+.aboutme-container .name, .aboutme-container .profession{
+    color: #b3c7d6ff;/*darkolivegreen;*//*bu*/  /*#c8ae81;*//*rgba(245,145,220,1);*//*(178,160,55,1);*/
+    animation: tiktok 0.5s linear infinite;
+}
+/*.aboutme-container .profession{color: darkolivegreen}*/
+@keyframes tiktok {
+    0%,100%{
+        text-shadow: -1.5px -1.5px 0 #0ff,1.5px 1.5px 0 #f00;
+    }
+    25%{
+        text-shadow: 1.5px 1.5px 0 #0ff,-1.5px -1.5px 0 #f00;
+    }
+    50%{
+        text-shadow: 1.5px -1.5px 0 #0ff,-1.5px 1.5px 0 #f00;
+    }
+    75%{
+        text-shadow: -1.5px 1.5px 0 #0ff,1.5px -1.5px 0 #f00;
+    }
+}
+
+
+.back-side .biography{ /*border:1px solid black;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*height: 43.08px;*/
+}
+/*
+.back-side .biography .typing{ //border:1px solid greenyellow;
+    position: relative;
+    //padding:0
+    //width: 40%;
+}
+.back-side .biography .typing::before{ //border:1px solid black;
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background-color: white;//darkolivegreen; or rgb(140,140,149); or rgb(165,152,154);or rgba(0,0,0,0.4);
+    //border-right: 1px solid white; -> .typing p or .typing p::after width 0-131.23px
+
+    animation: blinkCursor 10s steps(10) infinite normal;
+}
+@keyframes blinkCursor {
+    0%,75%{opacity: 1;}
+    76%,100%{opacity: 0;}
+}
+the above corresonding to <div className="biography"> <div className='typing'><p>i am keen!</p></div> </div> for blinkCursor*/
+/*below for p (or span) for typing effect (and/or blinkcursor) <div className="biography"> <p>i am keen!</p> </div>*/
+/*
+//.back-side .biography .typing p{
+.back-side .biography p{border:1px solid salmon;
+
+    font-family: 'Merienda', cursive;
+    font-size: 22px;
+    //margin:0; padding: 0;
+    animation: typeWriter 10s steps(9) infinite, blinkcs 500ms steps(9) infinite normal;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 131.23px;//131.23px; //100%; when 40% in parent div typing // 40%;
+    margin: 0 auto;
+    //transform:translateY(-50%);
+
+    //the above for typing effect not below add nblinkcursor & blinkcs added to animation
+    border-right: 2px solid rgba(255,255,255,0.75);
+
+}
+*/
+@keyframes typeWriter {
+    /*from{width: 0} to{width: 100%} {width: 131.23px}*/
+    0%,90%,100%{width: 0} 30%,60%{width: 131.23px}/*{width: 131.23px}*/ /*{width: 100%} when 40% in parent div typing*/
+}
+@keyframes blinkcs {
+    from{border-right-color: rgba(255,255,255,0.75)}
+    to{border-right-color: transparent}
+}
+/*
+.back-side .biography p{border:1px solid salmon;
+
+    font-family: 'Merienda', cursive;
+    font-size:15px;
+    position:relative;
+    margin: 0 auto;
+    margin-left: 3px;
+}
+//below includes both typing & blinking
+.back-side .biography p::after{border:2px solid orange;
+    content:"";
+    position: absolute;
+    left:0;
+    height: 100%;
+    width: 100%;
+    background-color: darkolivegreen;
+    border-left: 2px solid white;
+    animation: typingBlink 5s steps(45) infinite;
+}
+@keyframes typingBlink {
+    30%,60%{left:100%;margin:0 -5px 0 5px;} //or left:105%;
+    0%,90%,100%{left:0;margin-left: 0}
+}
+//the above <div className="biography"> <p>hehe</p></div>
+.back-side .biography .static-txt{border:2px solid red;margin:0 auto;margin-right: 0}
+//the above <div className="biography"><div className='static-txt'> I am </div> <p>hehe</p></div>
+*/
+/*
+//padding: 10px; in .biography so margin:0 below
+.back-side .biography .static-txt{border:2px solid red;margin:0 auto}
+.back-side .biography .dynamic-txt {border:2px solid yellow;margin:0 auto}
+.back-side .biography .dynamic-txt li{ border:2px solid blue;
+    list-style: none;
+    top:0;
+    animation: slide 1.5s steps(4) infinite;
+}
+.back-side .biography .dynamic-txt{
+    padding:0;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.back-side .biography .dynamic-txt p{
+    border:2px solid greenyellow;
+    text-align: left;
+}
+@keyframes slide {
+    100%{top:-360px}
+}
+*/
+
+.dynamic-txt,.static-txt{
+    font-family: 'Merienda', cursive;
+    font-size:15px;
+}
+.dynamic-txt{position: relative;margin-left:5px}
+.dynamic-txt::after{
+    content: "";
+    position: absolute;
+    right: 0;
+    width: 1px;
+    height: 100%;
+    border-right:2px solid white;
+    animation: blinc 0.5s infinite ease;
+}
+@keyframes blinc {
+    0%{opacity: 0}100%{opacity: 1;}
+}
+
+/*
+.biography{position: relative;}
+.biography::after{
+    content:"";
+    //position: absolute;right: 0;
+    width: 2px; //or bgc then no need border-right
+    height: 20px;//100%;
+    border: 2px solid red;
+}*//*
+.dynamic-txt{border: 2px solid blueviolet}
+.static-txt{border:2px solid yellowgreen}*/

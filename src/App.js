@@ -30,8 +30,12 @@ function App() {//console.log(window.pageYOffset,window.scrollY);//0 0
     useEffect(()=>{AOS.init({
         duration : 2000
     })},[]);
+
+    const [globalBlur,setGlobalBlur]=useState(false) //active/true when any modal shows;
+    // but making everything blur (entire page /app-container including popup higher zindex modal)
+    //unless any modal is siblings of app-container
   return (
-      <div>
+      <div className={globalBlur?"app-container blurbg":"app-container"} id='app-blur'>
           <div className={y===0?"AppTransparent-bg":"App-bg"}>
               <div className={y===0?"AppTransparent":"App"}>
                   {y==0?<img src={logo} className="App-logo" alt="logo" />:<></>}
@@ -39,7 +43,7 @@ function App() {//console.log(window.pageYOffset,window.scrollY);//0 0
               </div>
           </div>
 
-          <Main y={y}/>
+          <Main y={y} setGlobalBlur={setGlobalBlur} globalBlur={globalBlur}/>
       </div>
   );
 }

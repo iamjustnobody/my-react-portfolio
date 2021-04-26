@@ -13,6 +13,7 @@
     "react-router-hash-link": "^2.4.0",
     "react-scripts": "4.0.2",
     "react-tsparticles": "^1.18.12",
+    "swiper": "^6.5.8",
     "web-vitals": "^1.1.0"
   },
   "scripts": {

@@ -6,3 +6,30 @@
 /*    background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.7)),url("./bg.jpg") no-repeat;
     background-size: cover;*/
 }
+.heading{
+    font-family: 'Special Elite', cursive;
+    text-align: center;
+    letter-spacing: 3px;
+    color: rgba(89,254,289,0.65);
+    margin-bottom: 50px;
+}
+
+.heading{
+    -webkit-box-reflect: below 2px linear-gradient(transparent,#0008);
+    line-height: 0.7em;
+    animation: text 5s linear infinite;
+}
+@keyframes text {
+    0%,18%,20%,50.1%,60%,65%,80.1%,90%,92.1%,100%{
+        color:#0e3742; /*rgba(89,254,289,0.65);*//*#0e3742;*/
+        text-shadow: none;
+    }
+    18.1%,20.1%,30%,50%,60.1%,65%,80.1%,90%,92.1%{
+        color:#fff;
+        text-shadow: 0 0 10px #03bcf4, /*not rgba(89,254,289,1) nor rgba(89,254,289,0.65),*/
+        0 0 20px #03bcf4,
+        0 0 40px #03bcf4,
+        0 0 80px #03bcf4,
+        0 0 160px #03bcf4;
+    }
+}

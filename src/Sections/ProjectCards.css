@@ -1,0 +1,197 @@
+/*
+@import 'swiper/swiper.scss';
+@import 'swiper/components/navigation/navigation.scss';
+@import 'swiper/components/pagination/pagination.scss';
+@import 'swiper/components/scrollbar/scrollbar.scss';
+*/
+
+.portfolio-container{
+    min-height: 100vh;
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    user-select: none;
+}
+.projects-container{
+    min-height: 60vh;
+    width: 100%;
+    flex-wrap: wrap;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    /*background: #010615;*/
+}
+
+.project-card{
+    display: flex;
+    /*flex-direction: column;*/
+    justify-content: center;
+    align-items: center;
+    height:207px; /*adjustable dep on pic size*/
+    width:320px;
+    margin: 40px;
+    position: relative;
+
+    transition: 0.5s;
+    /*border:2px solid red;*/
+   /* background-color: #060c21; /*#010615;*/
+
+}
+.project-card:hover{
+    height: 400px;
+   /* background:  #060c21;*/
+}
+.project-card .imgBox{ /*border:3px solid white;*/
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    /*background:  #060c21;*/
+    background: linear-gradient(0deg,#060c21,#262626);
+    z-index: 1;
+}
+.project-card .imgBox img{ /*or .imgBx-image NOT project-image*/
+    /*border:5px solid yellowgreen;*/
+    opacity: 0.3;
+    /*max-width: 100%;*/
+    transition: 0.5s;
+
+    /*margin:0; for top left no gap but display real image size*/
+    width: 100%;/*height: 100%; expandable as project-card expands when hover*/
+}
+/*.project:hover{height:500px}*/
+.project-card:hover .imgBox img{
+    opacity: 1;
+}
+
+.project-card:before{
+    content: "";
+    /*background: white;*/
+    position: absolute;
+    top:-3px;
+    left:-3px;
+    right: -3px;
+    bottom: -3px;
+    /*width & height calc(100%+3px)*/
+    /*z-index: -1;*/
+    /*background: linear-gradient(235deg,#89ff00,#010615,#00bcd4);*/
+}
+.project-card:after{
+    content: "";
+    /*background: white;*/
+    position: absolute;
+    top:-8px;
+    left:-8px;
+    right: -8px;
+    bottom: -8px;
+    /*width & height calc(100%+8px)*/
+    /*z-index: 1;*/
+    filter: blur(40px);
+    background-size: 400%;
+    animation: shadowAround 20s linear infinite;
+}
+.project-card:before,.project-card:after{
+    background: linear-gradient(235deg,#89ff00,#010615,#00bcd4);
+}
+.project-card:nth-child(2):before,.project-card:nth-child(2)::after{
+    background: linear-gradient(235deg,#ff005e,#010615,#fbff00);
+}
+.project-card:nth-child(3):before,.project-card:nth-child(3)::after{
+    background: linear-gradient(235deg,#772aff,#010615,#2196f3);
+    /*background: linear-gradient(45deg,#fb0094,#0000ff,#00ff00,#ffff00,#ff0000,#fb0094,#0000ff,#00ff00,#ffff00,#ff0000);
+    animation: shadowAround 20s linear infinite;*/
+}
+@keyframes shadowAround {
+    0%{background-position: 0 0;}
+    50%{background-position: 300% 0;}
+    100%{background-position: 0 0;}
+}
+
+
+.project-card .project-content{
+    position:absolute;
+    bottom:10px;
+    left:10px;
+    right:10px;
+    height: 70px;
+    background: red;
+    opacity: 0;
+    transition: 0.5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    z-index: 1;
+}
+.project-card:hover .project-content{
+    opacity: 1;
+}
+
+
+
+/*SwiperModal*/
+#mySwiperModal{
+    z-index: 5;
+
+
+    font-size: 14px;
+    color: #000;
+    margin: 0;padding:0; /*opt*/
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top:0;
+    left:0;
+    background: #111;
+    min-height: 100vh;
+}
+
+/* 关闭按钮 */
+.swiperClose {
+    color: white;
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    font-size: 35px;
+    font-weight: bold;
+}
+.swiperClose:hover,
+.swiperClose:focus {
+    color: #999;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.swiper-container {
+    width: 100%;
+    padding-top: 40px;
+    padding-bottom: 200px;
+    /*border:4px solid white;*/
+    margin:60px auto
+}
+
+.swiper-slide {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 300px;
+    height: 300px; /*adjustable*/
+    background: #000;
+    object-fit: cover;
+    /*border:1px solid white;*/
+    margin:15px;
+    -webkit-box-reflect: below 1px linear-gradient(transparent,transparent,#0006);
+    /*not sure how to control style (e.g.width) of background-image in css here if in html/js <div className="swiper-slide" style={{backgroundImage:`url(${_slide.imgSrc})`}}></div>*/
+}
+.swiper-slide img{
+    width: 100%;
+    object-fit: cover;
+
+}
+

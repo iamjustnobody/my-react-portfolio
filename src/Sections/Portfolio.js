@@ -30,16 +30,16 @@ export const Portfolio = () =>{
         modalShown:false
     }]
     const [projGallery,setProjGallery]=useState(gallery)
-    useEffect(()=>{setProjGallery(gallery);console.log(projGallery[0].modalShown)},[])
+    useEffect(()=>{setProjGallery(gallery);},[]) //console.log(projGallery[0].modalShown)
 
     const [innerModalId,setInnerModalId]=useState(0)
 
-    const handleModal=async (index)=>{ console.log('before modal open',projGallery);
+    const handleModal=async (index)=>{ //console.log('before modal open',projGallery);
     await setInnerModalId(0)
         await setProjGallery(projGallery.map(((el,id)=>{
             //if(index==id){el.modalShown=!el.modalShown}
             //return el
-            if(index==id){console.log(el.modalShown);return {...el,modalShown:!el.modalShown}}
+            if(index==id){return {...el,modalShown:!el.modalShown}}//console.log(el.modalShown);
             return el
         })))
         setGlobalModalIndex(index)
@@ -117,12 +117,12 @@ export const Portfolio = () =>{
     }
 
     let dots = [];
-    const outputDots=(curIndex,fromId)=>{ console.log(projGallery[curIndex].projModal.length)
+    const outputDots=(curIndex,fromId)=>{ //console.log(projGallery[curIndex].projModal.length)
         for (let i = 0; i < projGallery[curIndex].projModal.length; i++) {
             dots.push(<span className={projGallery[curIndex].projModal[i].innerModalShown?"dot active":"dot"}
                             onClick={() => jumpToInnerSlide(curIndex,fromId, i)}></span>);
         }
-        console.log('dots',dots)
+        //console.log('dots',dots)
         return dots;
     }//className={projGallery[curIndex].projModal[i].innerModalShown?"dot active":"dot"}
 

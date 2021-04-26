@@ -1,5 +1,5 @@
 .App-bg{
-  background:linear-gradient(to right top,#65dfc9,#6cdbeb);
+  /*background:linear-gradient(to right top,#65dfc9,#6cdbeb);*/ /*bu*/
   /*background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);*/
   /*background:linear-gradient(to right top,rgba(246,211,101,0.6),rgba(253,160,133,0.1));*/
   /*background:linear-gradient(to right top,rgba(101,223,201,0.6),rgba(108,219,235,0.1));*/
@@ -19,6 +19,8 @@
   align-content: center;
   height: 49px; width: 100%;/*100%*/
   margin: 0;
+
+  background-color: black; /*updated replacing bu in app-bg*/
 }
 .AppTransparent-bg{/*#282c34*/
   background-color: rgba(255,255,255,0);
@@ -61,5 +63,9 @@
   }
 }
 
-
+.app-container#app-blur.blurbg{
+  filter:blur(20px);
+  pointer-events: none;
+  user-select: none;
+}
 
