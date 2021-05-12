@@ -60,12 +60,15 @@ export const AboutMe = React.forwardRef((props,ref) =>{
     }*/
 
     const [erasing,setErasing]=useState(false)
+    const {visibleSection}=props
     useEffect(() => {
-        const intervalID=setTimeout(handleTxt,50); //()=>{handleTxt()} or ()=>handleTxt() //not setInterval
-        setIntervalId(intervalID)
-        return () => {
-            clearInterval(intervalId)
-        }
+        //if(visibleSection==='aboutMe'){
+            const intervalID=setTimeout(handleTxt,50); //()=>{handleTxt()} or ()=>handleTxt() //not setInterval
+            setIntervalId(intervalID)
+            return () => {
+                clearInterval(intervalId)
+            }
+        //}
     }, [countChars,txtIndex,erasing]) //erasing opt
 
     const handleTxt=async ()=>{ //console.log(countChars)

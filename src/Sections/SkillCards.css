@@ -43,7 +43,14 @@
     width: 50%;
     height: 100%;
     background: rgba(255,255,255,0.1)
-}
+}/*
+.techs-container .tech-card:hover::before{
+    transform: scale(1.4);
+    transition: 0.5s;
+    box-shadow:  0 0 15px #ffee10;
+    background: #ffee10;
+    z-index: -20;
+}*/
 .techs-container .tech-card .tech-box{
     position: absolute;
     top:5px;
@@ -251,6 +258,10 @@ background: rgba(255,255,255,0.05);
     background:  #97dc47;
     box-shadow: 0 0 50px #97dc47;
 }
+
+
+
+
 
 
 

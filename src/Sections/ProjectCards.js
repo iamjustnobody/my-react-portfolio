@@ -165,11 +165,11 @@ export const ProjectCards = React.forwardRef((props,ref) =>{
                                         <video className='imgBx-image' controls>
                                             <source src={projGallery[_index].projImgSrc} type="video/mp4"></source>
                                         </video>
-                                        :<img className='imgBx-image' src={projGallery[_index].projImgSrc} onClick={()=>{handleModal(_index)}}/>}
+                                        :<img className='imgBx-image' src={projGallery[_index].projImgSrc}/>}
                                     </div>
                                     <div className='project-content'>
                                         <div className='project-headline'>
-                                            <div className='project-name'><p>{_el.projTitle}</p></div>
+                                            <div className='project-name'><p data-name={_el.projTitle}>{_el.projTitle}</p></div>
                                             <div className='project-githubLink'>
                                                 <a href={_el.github} target="_blank">
                                                     <i className="fab fa-github" title="github repo" id="github"></i>

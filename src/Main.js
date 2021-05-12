@@ -10,11 +10,12 @@ import {ProjectCards} from "./Sections/ProjectCards";
 
 export const Main =React.forwardRef((props,ref)=>{
     const {ref1,ref2,ref3,ref4,ref5}=ref
+    const {visibleSection}=props
     return (
         <div className="content-container">
             <Home id='home' ref={ref1}/>
             <div>
-                <AboutMe id='aboutMe' ref={ref2}/>
+                <AboutMe id='aboutMe' ref={ref2} visibleSection={visibleSection}/>
                 <SkillCards id='skillCards' ref={ref3}/>
                 <ProjectCards id='projectCards' ref={ref4}/>
                 <ContactMe id='contactMe' ref={ref5}/>

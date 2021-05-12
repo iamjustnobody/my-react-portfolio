@@ -95,7 +95,8 @@
     width: 100%;
     padding-top:0;
     padding-bottom: 0; /*or height:100%*/
-    height:35px /* was 10% but then height of .project-content 175px -> opt now */
+    height:35px; /* was 10% but then height of .project-content 175px -> opt now */
+    margin-bottom:8px; /*or height:46px; no margin-bottom*/
 }
 .project-card .project-content .project-headline .project-name{font-weight: bold;font-size:18px}
 .project-card .project-content .project-summary{ /*border: 2px solid white;*/
@@ -111,20 +112,123 @@
     word-spacing: 5px;*/
     text-align: justify;
     text-justify: inter-word;
+    /*text-shadow: 0 0 10px #00b3ff, 0 0 20px #00b3ff, 0 0 40px #00b3ff, 0 0 80px #00b3ff, 0 0 120px #00b3ff;*/
 }
 .project-name, .project-slides,.project-githubLink{ /*border:2px solid white;*/
     margin-left:10px
 }
+.project-slides,.project-githubLink{ /*border:2px solid red;*/
+    margin-left: 17px;
+    padding: 7px; /*expand circle; expand h&w; display flex wont expand circle*/
+    border-radius: 50%;
+    height: 20px;
+    width: 20px; /*enough -> not beyond circle*/
+    position: relative;
+    color: #fff;
+}
+.project-githubLink i{color: #fff}
+.project-slides:before,.project-githubLink:before,.project-slides:after,.project-githubLink:after{
+    content: '';
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: #000;
+    filter: blur(20px);
+    opacity: 0;
+    transition: 1s;
+    z-index: -20;
+}
+.project-slides:after,.project-githubLink:after{filter: blur(40px);}
+.project-slides:hover:before,.project-githubLink:hover:before,.project-slides:hover:after,.project-githubLink:hover:after{
+    opacity: 1;}
+.project-slides .fas,.project-githubLink .fab{
+    text-shadow: 0 2px 5px rgba(0,0,0,.2);
+    transition:0.5s;
+    transform: rotateY(0deg) scale(0.8);
+    opacity: 0.2;
+}
+.project-slides:hover,.project-githubLink:hover{cursor: pointer}
+.project-slides:hover i,.project-githubLink:hover i{
+    opacity: 1;
+    transform: scale(1.2);
+}
+.project-githubLink:hover .fab{ transform: scale(1.4);}
+/*.project-slides i,.project-slides:before,.project-slides:after,.project-githubLink a,.project-githubLink:before,.project-githubLink:after{background: xx;}*/
+/*not i's bgc*/
+.project-card .project-githubLink,.project-card .project-githubLink:before,.project-card .project-githubLink:after{
+    background: linear-gradient(45deg,#ff0057,#e64a19);
+}
+.project-card .project-slides,.project-card .project-slides:before,.project-card .project-slides:after{
+    background: linear-gradient(45deg,#89ff00,#00bcd4);
+}
+
+.project-card:nth-child(2) .project-githubLink,.project-card:nth-child(2) .project-githubLink:before,.project-card:nth-child(2) .project-githubLink:after,
+.project-card:nth-child(5) .project-githubLink,.project-card:nth-child(5) .project-githubLink:before,.project-card:nth-child(5) .project-githubLink:after,
+.project-card:nth-child(8) .project-githubLink,.project-card:nth-child(8) .project-githubLink:before,.project-card:nth-child(8) .project-githubLink:after,
+.project-card:nth-child(11) .project-githubLink,.project-card:nth-child(11) .project-githubLink:before,.project-card:nth-child(11) .project-githubLink:after{
+    background: linear-gradient(45deg,#e91d63,#5d02ff);
+}
+.project-card:nth-child(2) .project-slides,.project-card:nth-child(2) .project-slides:before,.project-card:nth-child(2) .project-slides:after,
+.project-card:nth-child(5) .project-slides,.project-card:nth-child(5) .project-slides:before,.project-card:nth-child(5) .project-slides:after,
+.project-card:nth-child(8) .project-slides,.project-card:nth-child(8) .project-slides:before,.project-card:nth-child(8) .project-slides:after,
+.project-card:nth-child(11) .project-slides,.project-card:nth-child(11) .project-slides:before,.project-card:nth-child(11) .project-slides:after{
+    background: linear-gradient(45deg,#ff0000,#ffc107);
+}
+
+
 .project-card:nth-child(1):hover{height:468px}
-.project-card:nth-child(2):hover{height:500px}
+.project-card:nth-child(2):hover{height:508px}
 .project-card:nth-child(3):hover{height:530px}
 .project-card:nth-child(4):hover{height:320px}
 .project-card:nth-child(5):hover{height:445px}
-.project-card:nth-child(6):hover{height:277px}
-.project-card:nth-child(7):hover{height:277px}
+.project-card:nth-child(6):hover{height:320px}
+.project-card:nth-child(7):hover{height:266px}
 .project-card:nth-child(8):hover{height:320px}
-.project-card:nth-child(9):hover{height:258px}
+.project-card:nth-child(9):hover{height:270px}
 
+.project-name p{ position: relative;
+    text-shadow: 0 0 10px #00b3ff, 0 0 20px #00b3ff, 0 0 40px #00b3ff, 0 0 80px #00b3ff, 0 0 120px #00b3ff;
+}
+.project-card:nth-child(2) .project-name p, .project-card:nth-child(5) .project-name p,
+.project-card:nth-child(8) .project-name p, .project-card:nth-child(11) .project-name p{
+    /*text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #ff0080, 0 0 30px #ff0080, 0 0 40px #ff0080, 0 0 55px #ff0080, 0 0 75px #ff0080;
+    text-shadow: 0 0 20px #ff0080, 0 0 30px #ff0080, 0 0 40px #ff0080, 0 0 55px #ff0080, 0 0 75px #ff0080;*/
+    text-shadow: 0 0 20px #ff005b
+}
+.project-name p:after{
+    content: attr(data-name);
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    z-index: -20;
+    filter: blur(1px);
+    color:#00b3ff;
+}
+.project-card:nth-child(2) .project-name p:after, .project-card:nth-child(5) .project-name p:after,
+.project-card:nth-child(8) .project-name p:after, .project-card:nth-child(11) .project-name p:after{
+    color:#ff005b;
+}
+.project-name p:before{
+    position: absolute;
+    top:0;
+    left:0;
+    content: '';
+    width: 100%;
+    height: 100%;
+   /* z-index: -20; background:red;*/
+    /*background: yellowgreen; z-index: 20; mix-blend-mode: color;*/
+    /*above two hav same effects*/
+    z-index: -21; background:#fe3a80;
+    opacity: .5;
+    filter: blur(15px);
+}
+.project-card:nth-child(2) .project-name p:before, .project-card:nth-child(5) .project-name p:before,
+.project-card:nth-child(8) .project-name p:before, .project-card:nth-child(11) .project-name p:before{
+    color:#00e1ff; /*#00ffd9;*/
+}
 
 
 
@@ -199,7 +303,7 @@
 }
 .project-card:hover .project-content{
     opacity: 1;
-    color:navajowhite;
+    color:navajowhite; /*for project-name & project-summary*/
 }
 
 

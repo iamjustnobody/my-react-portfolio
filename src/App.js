@@ -122,7 +122,7 @@ useEffect(()=>{console.log(visibleSection)},[visibleSection])
           </div>
 
           <Main y={y} setGlobalBlur={setGlobalBlur} globalBlur={globalBlur}
-                ref={ref}/>
+                ref={ref} visibleSection={visibleSection}/>
       </div>
   );
 }

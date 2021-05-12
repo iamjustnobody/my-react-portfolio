@@ -28,13 +28,13 @@ export const TopNav =React.forwardRef((props,ref) =>{
                     </NavHashLink>
                 </li>
                 <li className={props.visibleSection==='skillCards'?'selected':''}>
-                    <NavHashLink to="/XW/SDE#Skills" scroll={el=>el.scrollIntoView({behavior:'smooth'})}
+                    <NavHashLink to="/XW/SDE#SkillCards" scroll={el=>el.scrollIntoView({behavior:'smooth'})}
                                  style={{textDecoration:'none'}} className={props.y==0?'top':''}>
                         Skills
                     </NavHashLink>
                 </li>
                 <li className={props.visibleSection==='projectCards'?'selected':''}>
-                    <NavHashLink smooth to="/XW/SDE#Portfolio" style={{textDecoration:'none'}} className={props.y==0?'top':''}>
+                    <NavHashLink smooth to="/XW/SDE#ProjectCards" style={{textDecoration:'none'}} className={props.y==0?'top':''}>
                         Portfolio
                     </NavHashLink>
                 </li>
@@ -47,6 +47,29 @@ export const TopNav =React.forwardRef((props,ref) =>{
         </div>
     );
 })
+/*
+                <li className={props.visibleSection==='skillCards'?'selected':''}>
+                    <NavHashLink to="/XW/SDE#Skills" scroll={el=>el.scrollIntoView({behavior:'smooth'})}
+                                 style={{textDecoration:'none'}} className={props.y==0?'top':''}>
+                        Skills
+                    </NavHashLink>
+                </li>
+                <li className={props.visibleSection==='projectCards'?'selected':''}>
+                    <NavHashLink smooth to="/XW/SDE#Portfolio" style={{textDecoration:'none'}} className={props.y==0?'top':''}>
+                        Portfolio
+                    </NavHashLink>
+                </li>
+ */ //but #id on each component has changed id!='Skills' (Skills.js) id!='Portfolio' (Portfolio.js);
+// id='skillCards' <SkillCards id='skillCards' ref={ref3}/> @Main.js
+// <div id="SkillCards" className="skills-container" ref={ref}> (sillCards.js)
+// id='projectCards' <ProjectCards id='projectCards' ref={ref4}/> @Main.js
+// <div id="ProjectCards" className="portfolio-container" ref={ref}> (projectCards.js)
+//@Main.js: ref={ref3: skillcardsRef, ref4: projectcardsRef,};
+// sectionRefs=[{ section: "projectCards", ref: projectcardsRef },{ section: "skillCards", ref: skillcardsRef }]
+//sectionRefs[].section->visibleSection->li className style 'selected' above
+
+
+
 //style={props.y>=537&&props.y<1152? {fontWeight:'bold',borderBottom:'5px solid red',color:'red'}:{}} with navhashlink ok
 // but already has style={{textDecoration:'none'}} in navhashlink - could move above line of code to li (outside navhashlink instead
 //opt scroll={el=>el.scrollIntoView({behavior:'instant',block:'end'})}
