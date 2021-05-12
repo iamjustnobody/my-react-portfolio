@@ -1,9 +1,9 @@
 import React from 'react';
 import "./ContactMe.css";
 
-export const ContactMe = () =>{
+export const ContactMe = React.forwardRef((props,ref) =>{
     return (
-        <div id="ContactMe" className="contactme-container">
+        <div id="ContactMe" className="contactme-container" ref={ref}>
             <h1 className="heading">Contact</h1>
 
             <div className="cards-container">
@@ -104,4 +104,4 @@ export const ContactMe = () =>{
             </div>
         </div>
     );
-}
+})

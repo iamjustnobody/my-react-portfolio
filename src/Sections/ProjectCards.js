@@ -3,6 +3,13 @@ import React, {useEffect, useState} from 'react';
 //import "./ProjectCards.css"; //moved below swiper CSS
 import imgsrcurl1 from '../static/images/unnamed.png' // relative path to image
 import imgsrcurl2 from '../static/images/0709.jpg_wh860.jpg'
+/*
+import videoUrl1 from '../static/videos/AroundWeb.mp4'
+//import yturl from 'youtu.be/rn4AuUej62M'
+import twitterOverview from '../static/videos/all1.webm'*/
+
+import {gallery} from './projectGallery'
+
 
 
 // import Swiper core and required modules
@@ -32,15 +39,15 @@ import 'swiper/components/effect-coverflow/effect-coverflow.min.css'
 import 'swiper/components/pagination/pagination.min.css'
 import 'swiper/components/navigation/navigation.min.css'
 import 'swiper/components/scrollbar/scrollbar.min.css'
-  //move to index css b4 all css - no need - just move b4 projectcards css
+  //move to index css b4 all css - ok but no need - just move b4 projectcards css
 import "./ProjectCards.css";
 
 
 // install Swiper modules
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y,EffectCoverflow]);
 
-export const ProjectCards = (props) =>{
-    const gallery=[{
+export const ProjectCards = React.forwardRef((props,ref) =>{
+    /*const gallery=[{
         projImgId:'first',
         projImgSrc:imgsrcurl1,
         projTitle:"ever-note",
@@ -85,7 +92,7 @@ export const ProjectCards = (props) =>{
             innerModalShown:false
         }],
         modalShown:false
-    }]
+    }] */
 
     const [projGallery,setProjGallery]=useState(gallery)
     const [globalSwiperShownIndicator,setGlobalSwiperShownIndicator]=useState(false)
@@ -131,11 +138,11 @@ export const ProjectCards = (props) =>{
         pagination: {
             el: '.swiper-pagination',
         },
-        loop: true,
-        autoplay: {
+        loop: false,
+        /*autoplay: {
             delay: 500,
             disableOnInteraction: false,
-        },
+        },*/
     }
 
 
@@ -146,7 +153,7 @@ export const ProjectCards = (props) =>{
 
 
     return (
-        <div id="Portfolio" className="portfolio-container">
+        <div id="ProjectCards" className="portfolio-container" ref={ref}>
             <h1 className="heading">Project</h1>
             <div className='projects-container'>
                 {projGallery.map((_el,_index)=>{
@@ -154,16 +161,25 @@ export const ProjectCards = (props) =>{
                                 <div className='project-card' data-aos="fade-up" data-aos-easing="linear"
                                      data-aos-duration="1500">
                                     <div className='imgBox'>
-                                        <img className='imgBx-image' src={projGallery[_index].projImgSrc} onClick={()=>{handleModal(_index)}}/>
+                                        {projGallery[_index].imgType=="video"?
+                                        <video className='imgBx-image' controls>
+                                            <source src={projGallery[_index].projImgSrc} type="video/mp4"></source>
+                                        </video>
+                                        :<img className='imgBx-image' src={projGallery[_index].projImgSrc} onClick={()=>{handleModal(_index)}}/>}
                                     </div>
                                     <div className='project-content'>
-                                        <div className='project-title'><h2>{_el.projTitle}</h2></div>
-                                        <div className='project-githubCodes'>
-                                            <a href="">
-                                                <i className="fab fa-github" title="github repo" id="github">
-                                                </i>
-                                            </a>
+                                        <div className='project-headline'>
+                                            <div className='project-name'><p>{_el.projTitle}</p></div>
+                                            <div className='project-githubLink'>
+                                                <a href={_el.github} target="_blank">
+                                                    <i className="fab fa-github" title="github repo" id="github"></i>
+                                                </a>
+                                            </div>
+                                            <div className='project-slides' onClick={()=>{handleModal(_index)}}>
+                                                <i className="fas fa-external-link-alt" title="demo & preview"></i>
+                                            </div>
                                         </div>
+                                        <div className='project-summary'>{_el.projSummary.split("\n").map((_des,_key) => (<div key={_key}>{_des}</div>))}</div>
                                     </div>
                                 </div>
                                 {_el.modalShown?
@@ -172,7 +188,12 @@ export const ProjectCards = (props) =>{
                                     <div className="swiper-container">
                                         <div className="swiper-wrapper">
                                             {_el.projModal?_el.projModal.map((_slide,_id)=>(
-                                                <div className="swiper-slide" ><img src={_slide.imgSrc}/></div>
+                                                <div className="swiper-slide" >
+                                                    {_slide.innerImgType=="video"?
+                                                        <video src={_slide.imgSrc} controls></video>
+                                                        :<img src={_slide.imgSrc}/>
+                                                    }
+                                                </div>
                                             )):<></>}
                                         </div>
 
@@ -188,7 +209,17 @@ export const ProjectCards = (props) =>{
 
         </div>
     );
-}
+})
+//{_el.projTitle.replace(/[^\]\\n/g, '\n')} //{_el.projTitle.replace('<br/>', '\n')} //{_el.projTitle.split("\n").map((i,key) => {return <div key={key}>{i}</div>;})}
+//<video src="https://youtu.be/rn4AuUej62M" type='video/youtube' controls></video>
+//or https://www.youtube.com/watch?v=rn4AuUej62M or controls="true" or controls="controls" or just contorls
+//or <video controls onClick={()=>{handleModal(_index)}}><source src="https://youtu.be/rn4AuUej62M" type='video/youtube' /></video>
+//<iframe src="https://www.youtube.com/watch?v=rn4AuUej62M"></iframe> or https://youtu.be/rn4AuUej62M
+
+//<div className='imgBox'><img className='imgBx-image' src={projGallery[_index].projImgSrc} onClick={()=>{handleModal(_index)}}/></div>
+//<div className="swiper-slide" ><img src={_slide.imgSrc}/></div>
+//<div className="swiper-slide" ><video src={_slide.imgSrc} controls/></div>
+
 //or project-card having slibing project-card-bg & both inside of new outer project-box container (relative); both overlap nearly
 // (absolute;width&height=100%;top&left=0) then different +ve z-index but lower z-index reset top&left&bottom&right to negative px to expand (linear-gradient shadow)
 //whilst higher index has exact size of project-box to cover the whole main area ensuring the background (color) remains darkblurblack

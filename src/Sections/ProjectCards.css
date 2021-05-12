@@ -30,8 +30,8 @@
     /*flex-direction: column;*/
     justify-content: center;
     align-items: center;
-    height:207px; /*adjustable dep on pic size*/
-    width:320px;
+    height:215px; /*adjustable dep on pic size*/
+    width:380px;
     margin: 40px;
     position: relative;
 
@@ -41,7 +41,7 @@
 
 }
 .project-card:hover{
-    height: 400px;
+    height: 400px; /*overflow: hidden or auto;*/ /*min-height: 215px; height: auto;*/
    /* background:  #060c21;*/
 }
 .project-card .imgBox{ /*border:3px solid white;*/
@@ -55,7 +55,8 @@
     background: linear-gradient(0deg,#060c21,#262626);
     z-index: 1;
 }
-.project-card .imgBox img{ /*or .imgBx-image NOT project-image*/
+/*.project-card .imgBox img{*/ /*or .imgBx-image NOT project-image*/
+.project-card .imgBox .imgBx-image{
     /*border:5px solid yellowgreen;*/
     opacity: 0.3;
     /*max-width: 100%;*/
@@ -65,9 +66,68 @@
     width: 100%;/*height: 100%; expandable as project-card expands when hover*/
 }
 /*.project:hover{height:500px}*/
-.project-card:hover .imgBox img{
+/*.project-card:hover .imgBox img{*/
+.project-card:hover .imgBox .imgBx-image{
     opacity: 1;
 }
+
+
+
+
+.project-card:hover{ /*border: 2px solid white;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.project-card:hover .project-content{ /*border: 2px solid white;*/
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: column;
+   /* height:175px *//*opt*/
+    /*overflow: auto; or hidden*/ /*height: auto;*/
+}
+.project-card .project-content .project-headline{ /*border: 2px solid white;*/
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    padding-top:0;
+    padding-bottom: 0; /*or height:100%*/
+    height:35px /* was 10% but then height of .project-content 175px -> opt now */
+}
+.project-card .project-content .project-headline .project-name{font-weight: bold;font-size:18px}
+.project-card .project-content .project-summary{ /*border: 2px solid white;*/
+    flex:1;
+    width: 100%;
+}
+.project-summary div{
+    /*display: flex;
+    justify-content: space-around;
+    text-align: justify;
+    -moz-text-align-last: justify; // For Firefox
+    text-align-last: justify;
+    word-spacing: 5px;*/
+    text-align: justify;
+    text-justify: inter-word;
+}
+.project-name, .project-slides,.project-githubLink{ /*border:2px solid white;*/
+    margin-left:10px
+}
+.project-card:nth-child(1):hover{height:468px}
+.project-card:nth-child(2):hover{height:500px}
+.project-card:nth-child(3):hover{height:530px}
+.project-card:nth-child(4):hover{height:320px}
+.project-card:nth-child(5):hover{height:445px}
+.project-card:nth-child(6):hover{height:277px}
+.project-card:nth-child(7):hover{height:277px}
+.project-card:nth-child(8):hover{height:320px}
+.project-card:nth-child(9):hover{height:258px}
+
+
+
+
 
 .project-card:before{
     content: "";
@@ -95,13 +155,22 @@
     background-size: 400%;
     animation: shadowAround 20s linear infinite;
 }
-.project-card:before,.project-card:after{
+.project-card:before,.project-card:after,
+.project-card:nth-child(4):before,.project-card:nth-child(4)::after,
+.project-card:nth-child(7):before,.project-card:nth-child(7)::after,
+.project-card:nth-child(10):before,.project-card:nth-child(10)::after{
     background: linear-gradient(235deg,#89ff00,#010615,#00bcd4);
 }
-.project-card:nth-child(2):before,.project-card:nth-child(2)::after{
+.project-card:nth-child(2):before,.project-card:nth-child(2)::after,
+.project-card:nth-child(5):before,.project-card:nth-child(5)::after,
+.project-card:nth-child(8):before,.project-card:nth-child(8)::after,
+.project-card:nth-child(11):before,.project-card:nth-child(11)::after{
     background: linear-gradient(235deg,#ff005e,#010615,#fbff00);
 }
-.project-card:nth-child(3):before,.project-card:nth-child(3)::after{
+.project-card:nth-child(3):before,.project-card:nth-child(3)::after,
+.project-card:nth-child(6):before,.project-card:nth-child(6)::after,
+.project-card:nth-child(9):before,.project-card:nth-child(9)::after,
+.project-card:nth-child(12):before,.project-card:nth-child(12)::after{
     background: linear-gradient(235deg,#772aff,#010615,#2196f3);
     /*background: linear-gradient(45deg,#fb0094,#0000ff,#00ff00,#ffff00,#ff0000,#fb0094,#0000ff,#00ff00,#ffff00,#ff0000);
     animation: shadowAround 20s linear infinite;*/
@@ -118,8 +187,7 @@
     bottom:10px;
     left:10px;
     right:10px;
-    height: 70px;
-    background: red;
+    /*background: red;*/
     opacity: 0;
     transition: 0.5s;
     display: flex;
@@ -131,6 +199,7 @@
 }
 .project-card:hover .project-content{
     opacity: 1;
+    color:navajowhite;
 }
 
 
@@ -180,8 +249,8 @@
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    width: 300px;
-    height: 300px; /*adjustable*/
+    width: 400px;
+    height: 200px; /*adjustable*/
     background: #000;
     object-fit: cover;
     /*border:1px solid white;*/
@@ -192,6 +261,9 @@
 .swiper-slide img{
     width: 100%;
     object-fit: cover;
-
+}
+.swiper-slide video{
+    width: 100%;
+    object-fit: cover;
 }
 

@@ -4,7 +4,7 @@ import wordcloud1 from '../wordcloud1.png';
 import createArrayWithElements from "aos/src/js/helpers/elements";
 //https://www.youtube.com/watch?v=hZqj_8_m1gE
 
-export const AboutMe = () =>{
+export const AboutMe = React.forwardRef((props,ref) =>{
     const text=["applying for a SWE job",
         "an Electrical & Electronic Engineer",
         "a Nuclear Fuel route C&I Engineer",
@@ -98,7 +98,7 @@ export const AboutMe = () =>{
     }
 
     return (
-        <div id="AboutMe" className="aboutme-container">
+        <div id="AboutMe" className="aboutme-container" ref={ref}>
             <h1 className="heading">About me</h1>
             <div className="card"
                  data-aos="flip-left"
@@ -121,4 +121,4 @@ export const AboutMe = () =>{
             </div>
         </div>
     );
-}
+})

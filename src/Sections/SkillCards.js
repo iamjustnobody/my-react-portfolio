@@ -1,8 +1,10 @@
 import React, {useEffect, useState} from 'react';
 import "./SkillCards.css";
+import videoUrl1 from '../static/videos/aroundWeb/AroundWeb.mp4'
+import {icons} from './skillIcons'
 
-export const SkillCards = (props) =>{
-    const icons=[{
+export const SkillCards = React.forwardRef((props,ref) =>{
+    /*const icons=[{
         classname:"fab html fa-html5",
         iconname:'HTML5',
         iconModal:[{
@@ -82,7 +84,7 @@ export const SkillCards = (props) =>{
         modalShown:false
     }
 ]
-
+*/
 
 
     const [iconGallery,setIconGallery]=useState(icons)
@@ -106,6 +108,7 @@ export const SkillCards = (props) =>{
         let toId=curId
         await setIconGallery(iconGallery.map((el,index)=>{
             if(index==curIndex) {
+                if(el.iconModal.length==1){return el;}
                 return {
                     ...el,
                     iconModal:
@@ -152,7 +155,7 @@ export const SkillCards = (props) =>{
     
     
     return (
-        <div id="Skills" className="skills-container" >
+        <div id="SkillCards" className="skills-container" ref={ref}>
             <h1 className="heading">What I Can do &nbsp;&nbsp;?</h1>
             <div className="techs-container" >
                 {iconGallery.map((_icon,_index)=>{
@@ -177,7 +180,10 @@ export const SkillCards = (props) =>{
                                                 <>
                                                     <div className="myInnerSlides fade">
                                                         <div className="numbertext">{_id+1} / {_icon.iconModal.length}</div>
-                                                        <img src={_item.imgSrc} alt={_item.imgTxt} />
+                                                        {_item.imgType == 'video' ?
+                                                            <video src={_item.imgSrc} alt={_item.imgTxt} controls/>
+                                                            : <img src={_item.imgSrc} alt={_item.imgTxt}/>
+                                                        }
                                                         <div className='dots' style={{textAlign:"center"}}>
                                                             {outputDots(_index,_id)}
                                                         </div>
@@ -192,11 +198,15 @@ export const SkillCards = (props) =>{
     
                                                     <div className='bottom-overview'>
                                                         {_icon.iconModal.map((_innerModal,_iM)=>
-    
-                                                            <img className={_innerModal.innerModalShown?"demo active":"demo"}
-                                                                 src={_icon.iconModal[_iM].imgSrc} alt={_innerModal.imgTxt}
-                                                                 onClick={()=>{jumpToInnerSlide(_index,_id,_iM)}}/>
-    
+
+                                                            _innerModal.imgType=='video'?
+                                                                    <video className={_innerModal.innerModalShown?"demo active":"demo"}
+                                                                           src={_innerModal.imgSrc} alt={_innerModal.imgTxt}
+                                                                           onClick={()=>{jumpToInnerSlide(_index,_id,_iM)}}/>
+                                                                    :
+                                                                    <img className={_innerModal.innerModalShown?"demo active":"demo"} src={_icon.iconModal[_iM].imgSrc} alt={_innerModal.imgTxt}
+                                                                         onClick={()=>{jumpToInnerSlide(_index,_id,_iM)}}/>
+
                                                         )}
                                                     </div>
                                                 </>
@@ -216,4 +226,39 @@ export const SkillCards = (props) =>{
             </div>
         </div>
     );
-}
+})
+//<img src={_item.imgSrc} alt={_item.imgTxt} />
+//<img className={_innerModal.innerModalShown?"demo active":"demo"} src={_icon.iconModal[_iM].imgSrc} alt={_innerModal.imgTxt} onClick={()=>{jumpToInnerSlide(_index,_id,_iM)}}/>
+/*
+{_icon.iconModal.map((_innerModal,_iM)=>(
+<video className={_innerModal.innerModalShown?"demo active":"demo"} src={_innerModal.imgSrc} alt={_innerModal.imgTxt} onClick={()=>{jumpToInnerSlide(_index,_id,_iM)}}/>
+))}
+{_icon.iconModal.map((_innerModal,_iM)=>{return (
+<video className={_innerModal.innerModalShown?"demo active":"demo"} src={_innerModal.imgSrc} alt={_innerModal.imgTxt} onClick={()=>{jumpToInnerSlide(_index,_id,_iM)}}/>
+)})}
+{_icon.iconModal.map((_innerModal,_iM)=>{return <>
+<video className={_innerModal.innerModalShown?"demo active":"demo"} src={_innerModal.imgSrc} alt={_innerModal.imgTxt} onClick={()=>{jumpToInnerSlide(_index,_id,_iM)}}/>
+</>})} or <></>-><div></div>
+ */
+
+/*
+<div className='bottom-overview'>
+    {_icon.iconModal.map((_innerModal,_iM)=>
+        {
+           if(_innerModal.imgType=='video'){
+              return <video className={_innerModal.innerModalShown?"demo active":"demo"} src={_innerModal.imgSrc} alt={_innerModal.imgTxt} onClick={()=>{jumpToInnerSlide(_index,_id,_iM)}}/>
+           }
+           return <img className={_innerModal.innerModalShown?"demo active":"demo"} src={_icon.iconModal[_iM].imgSrc} alt={_innerModal.imgTxt} onClick={()=>{jumpToInnerSlide(_index,_id,_iM)}}/>
+         })
+      }
+</div>
+ */
+/*
+{_icon.iconModal.map((_innerModal,_iM)=>
+ {
+    return _innerModal.imgType=='video'?
+          <video className={_innerModal.innerModalShown?"demo active":"demo"} src={_innerModal.imgSrc} alt={_innerModal.imgTxt} onClick={()=>{jumpToInnerSlide(_index,_id,_iM)}}/>
+          :<img className={_innerModal.innerModalShown?"demo active":"demo"} src={_icon.iconModal[_iM].imgSrc} alt={_innerModal.imgTxt} onClick={()=>{jumpToInnerSlide(_index,_id,_iM)}}/>
+ })
+ }
+ */
