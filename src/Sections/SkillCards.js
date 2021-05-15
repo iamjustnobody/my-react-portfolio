@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import "./SkillCards.css";
-import videoUrl1 from '../static/videos/aroundWeb/AroundWeb.mp4'
+import videoUrl1 from '../staticAssets/videos/aroundWeb/AroundWeb.mp4'
 import {icons} from './skillIcons'
 
 export const SkillCards = React.forwardRef((props,ref) =>{

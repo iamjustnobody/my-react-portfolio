@@ -113,6 +113,11 @@
     text-align: justify;
     text-justify: inter-word;
     /*text-shadow: 0 0 10px #00b3ff, 0 0 20px #00b3ff, 0 0 40px #00b3ff, 0 0 80px #00b3ff, 0 0 120px #00b3ff;*/
+    font-family: 'Itim', cursive;
+    /*font-family: 'Texturina', serif;font-family: 'Indie Flower', cursive; font-family: 'Shadows Into Light', cursive;*/
+}
+.project-name{/*font-family: 'Texturina', serif; font-family: 'Josefin Sans', sans-serif; font-family: 'Indie Flower', cursive;*/
+    font-family: 'Reggae One', cursive; /*font-family: 'Josefin Sans', sans-serif;*/
 }
 .project-name, .project-slides,.project-githubLink{ /*border:2px solid white;*/
     margin-left:10px

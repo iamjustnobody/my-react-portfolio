@@ -163,7 +163,7 @@ export const Portfolio = () =>{
 
 
                                                         <a className="prev" onClick={()=>{handleSlides(_index,_id,-1)}}>&#10094;</a>
-                                                        <a className="next" onClick={()=>{handleSlides(_index,_id,1);console.log(_el)}}>&#10095;</a>
+                                                        <a className="next" onClick={()=>{handleSlides(_index,_id,1);}}>&#10095;</a>
 
 
                                                         <div className='bottom-overview'>
@@ -201,3 +201,5 @@ export const Portfolio = () =>{
 //return <>{(_el.projModal[_id].innerModalShown?<><div></div></>:<></>)}</> or return (_el.projModal[_id].innerModalShown?<><div></div></>:<></>)
 //return (x) ; () can also be removed ; So {return (x)} or {return x} ; But if no {} & return, must/better to have ()
 // So =>{return (x)} becomes =>{return x} becomes =>(x) (sometimes => x)
+
+//<a className="next" onClick={()=>{handleSlides(_index,_id,1);console.log(_el)}}>&#10095;</a>

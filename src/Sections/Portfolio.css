@@ -98,13 +98,14 @@
     background-color: green;
 }
 #first{
-    background-image: url("../static/images/unnamed.png");
+    background-image: url("../staticAssets/images/unnamed.png");
     /* or background: url("../static/images/unnamed.png") center no-repeat;*/
+    /* '../static/xx' to "src/staticAssets/images/unnamed.png" after rename & refactor static to staticAssets*/
     background-size: cover;
     background-repeat: no-repeat;
 }
 #second{
-    background-image: url("../static/images/0709.jpg_wh860.jpg");
+    background-image: url("../staticAssets/images/0709.jpg_wh860.jpg");
     background-size: cover;
     background-repeat: no-repeat;
 }

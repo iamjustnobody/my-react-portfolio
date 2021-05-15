@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from 'react';
 
 //import "./ProjectCards.css"; //moved below swiper CSS
-import imgsrcurl1 from '../static/images/unnamed.png' // relative path to image
-import imgsrcurl2 from '../static/images/0709.jpg_wh860.jpg'
+import imgsrcurl1 from '../staticAssets/images/unnamed.png' // relative path to image
+import imgsrcurl2 from '../staticAssets/images/0709.jpg_wh860.jpg'
 /*
 import videoUrl1 from '../static/videos/AroundWeb.mp4'
 //import yturl from 'youtu.be/rn4AuUej62M'

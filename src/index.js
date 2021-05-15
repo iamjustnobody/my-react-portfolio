@@ -14,7 +14,7 @@ import 'swiper/components/scrollbar/scrollbar.min.css'
 */ //intended to move here b4 all css- not working - move back to projectcardsJs but placed just b4 import projectCarsCSS
 
 ReactDOM.render(
-    <BrowserRouter>
+    <BrowserRouter basename='/wxx'>
         <Apps />
     </BrowserRouter>,
   document.getElementById('root')

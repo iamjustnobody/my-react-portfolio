@@ -18,28 +18,28 @@ export const TopNav =React.forwardRef((props,ref) =>{
         <div className="bar-container" ref={ref}>
             <ul className="TopRightBar">
                 <li className={`${props.visibleSection === "home" ? "selected" : ""}`}>
-                    <NavHashLink smooth to="/XW/SDE#Home" style={{textDecoration:'none'}} className={props.y==0?'top':''}>
+                    <NavHashLink smooth to="/XW/SWE#Home" style={{textDecoration:'none'}} className={props.y==0?'top':''}>
                         Home
                     </NavHashLink>
                 </li>
                 <li className={props.visibleSection === "aboutMe" ? "selected" : ""}>
-                    <NavHashLink smooth to="/XW/SDE#AboutMe" style={{textDecoration:'none'}} className={props.y==0?'top':''}>
+                    <NavHashLink smooth to="/XW/SWE#AboutMe" style={{textDecoration:'none'}} className={props.y==0?'top':''}>
                         About Me
                     </NavHashLink>
                 </li>
                 <li className={props.visibleSection==='skillCards'?'selected':''}>
-                    <NavHashLink to="/XW/SDE#SkillCards" scroll={el=>el.scrollIntoView({behavior:'smooth'})}
+                    <NavHashLink to="/XW/SWE#SkillCards" scroll={el=>el.scrollIntoView({behavior:'smooth'})}
                                  style={{textDecoration:'none'}} className={props.y==0?'top':''}>
                         Skills
                     </NavHashLink>
                 </li>
                 <li className={props.visibleSection==='projectCards'?'selected':''}>
-                    <NavHashLink smooth to="/XW/SDE#ProjectCards" style={{textDecoration:'none'}} className={props.y==0?'top':''}>
+                    <NavHashLink smooth to="/XW/SWE#ProjectCards" style={{textDecoration:'none'}} className={props.y==0?'top':''}>
                         Portfolio
                     </NavHashLink>
                 </li>
                 <li className={props.visibleSection==='contactMe'?'selected':''}>
-                    <NavHashLink smooth to="/XW/SDE#ContactMe" style={{textDecoration:'none'}} className={props.y==0?'top':''}>
+                    <NavHashLink smooth to="/XW/SWE#ContactMe" style={{textDecoration:'none'}} className={props.y==0?'top':''}>
                         Contact Me
                     </NavHashLink>
                 </li>

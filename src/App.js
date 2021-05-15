@@ -37,8 +37,8 @@ function App() {//console.log(window.pageYOffset,window.scrollY);//0 0
 
 
 
-    const getDimensions = (ele) => { console.log('ele',ele)
-        const { height } = ele.getBoundingClientRect(); console.log('height',height)
+    const getDimensions = (ele) => { //console.log('ele',ele)
+        const { height } = ele.getBoundingClientRect();// console.log('height',height)
         const offsetTop = ele.offsetTop;
         const offsetBottom = offsetTop + height;
 
@@ -105,7 +105,7 @@ function App() {//console.log(window.pageYOffset,window.scrollY);//0 0
 
     //const handleScroll=event=>{} //better to be inside useeffect so can be cleaned up
 
-useEffect(()=>{console.log(visibleSection)},[visibleSection])
+//useEffect(()=>{console.log(visibleSection)},[visibleSection])
 
 
 

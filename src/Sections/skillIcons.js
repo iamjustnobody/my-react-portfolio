@@ -1,7 +1,7 @@
-import jupiterGlosV from '../static/videos/eventManager/ZHENGPIAN.webm'
-import twitterNotification1 from '../static/videos/twitterClone/notification1.webm'
-import tourOverview from '../static/videos/tours/tour-overview.webm'
-import aroundWeb from '../static/videos/aroundWeb/AroundWeb.mp4'
+import jupiterGlosV from '../staticAssets/videos/eventManager/ZHENGPIAN.webm'
+import twitterNotification1 from '../staticAssets/videos/twitterClone/notification1.webm'
+import tourOverview from '../staticAssets/videos/tours/tour-overview.webm'
+import aroundWeb from '../staticAssets/videos/aroundWeb/AroundWeb.mp4'
 
 export const icons=[
     {
