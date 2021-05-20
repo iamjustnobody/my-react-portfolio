@@ -36,7 +36,7 @@
     position: relative;
 
     transition: 0.5s;
-    /*border:2px solid red;*/
+    border:2px solid red;
    /* background-color: #060c21; /*#010615;*/
 
 }
@@ -44,7 +44,7 @@
     height: 400px; /*overflow: hidden or auto;*/ /*min-height: 215px; height: auto;*/
    /* background:  #060c21;*/
 }
-.project-card .imgBox{ /*border:3px solid white;*/
+.project-card .imgBox{ border:3px solid red;
     position: absolute;
     top:0;
     left:0;
@@ -53,11 +53,13 @@
     box-sizing: border-box;
     /*background:  #060c21;*/
     background: linear-gradient(0deg,#060c21,#262626);
-    z-index: 1;
+    z-index: 1; /*same layer as proj-content;
+    when hover, not fully filled up b imgBx-image;
+    as proj-content also abs pos to proj-card & color, proj-content overlaps imgBox & rest of imgBox where imgBx-image not taking up*/
 }
 /*.project-card .imgBox img{*/ /*or .imgBx-image NOT project-image*/
 .project-card .imgBox .imgBx-image{
-    /*border:5px solid yellowgreen;*/
+    /*border:5px solid yellowgreen;/*not filling up imgBox*/
     opacity: 0.3;
     /*max-width: 100%;*/
     transition: 0.5s;
@@ -74,13 +76,13 @@
 
 
 
-.project-card:hover{ /*border: 2px solid white;*/
+.project-card:hover{ border: 2px solid white;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
-.project-card:hover .project-content{ /*border: 2px solid white;*/
+.project-card:hover .project-content{ border: 2px solid greenyellow;
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -88,15 +90,16 @@
    /* height:175px *//*opt*/
     /*overflow: auto; or hidden*/ /*height: auto;*/
 }
-.project-card .project-content .headline-ctrl{
+.project-card .project-content .headline-ctrl{ border: 2px solid deepskyblue;
     width: 100%;
     height:35px; /*so width& height in inside project-headline are 100%*/
     display: flex;
     justify-content:flex-start;align-items: center; /*keep vertically aligned & name+github+slidesLinksBtns pushed to left-start*/
     position: relative;/*for .project-card .headline-ctrl .read-more:before skewX div btn*/
+    /*margin-bottom: 8px;/* this align w project-headline below; this margin shoule be applied to read-more div btn*/
 }/*now introduce readmore btn by introducing headline-ctrl to incl project-headline div (in html projectCardsJs)
-see line 477 for read-more div btn design*/
-.project-card .project-content .project-headline{ /*border: 2px solid white;*/
+see line 482 for read-more div btn design*/
+.project-card .project-content .project-headline{ border: 2px solid white;
     flex:1; /*pushing newly introduced readmore btn to the right edge*/
 
     display: flex;
@@ -210,7 +213,7 @@ see line 477 for read-more div btn design*/
     position: relative;
     height:250px; /*prevly 400px*/
     overflow: hidden;
-} /*see line335 for more detailed children hover height*/
+} /*see after line 340 347 358 for more detailed children hover height*/
 
 .project-name p{ position: relative;
     text-shadow: 0 0 10px #00b3ff, 0 0 20px #00b3ff, 0 0 40px #00b3ff, 0 0 80px #00b3ff, 0 0 120px #00b3ff;
@@ -315,7 +318,8 @@ see line 477 for read-more div btn design*/
 
 .project-card .project-content{
     position:absolute;
-    top:225px;/*215 unhover proj-card height +some margins; /*bottom:10px;/*updated - readmore btn*/
+    top:225px;/*215 unhover proj-card height +some margins margin-top to imgbox/imgbx;
+    /*prevly bottom:10px;/*updated - readmore btn*/
     left:10px;
     right:10px;
     /*background: red;*/
@@ -326,7 +330,7 @@ see line 477 for read-more div btn design*/
     align-items: center;
     flex-direction: column;
 
-    z-index: 1;
+    z-index: 1; /*same layer of projectImgBox*/
 }
 .project-card:hover .project-content{
     opacity: 1;
@@ -340,6 +344,7 @@ see line 477 for read-more div btn design*/
 .project-card:nth-child(7) .project-content {top: 170px;}
 .project-card:nth-child(8) .project-content{top: 185px;}
 .project-card:nth-child(9) .project-content{top: 200px;}
+.project-card:nth-child(6) .project-content{top: 200px;}
 /*.project-card .project-content{position: relative}*/
 
 .project-card:nth-child(1):hover{height:370px}
@@ -450,7 +455,7 @@ above is like .project-card:hover::after*/
 1: the more div (onclickBtn) outside project-content (inparallelwith/after proj-content)
 inside proj-card; position abs to outside proj-card
 2, everytime changing readMore field changes projGalleryState so rerendering proj-card causing proj-card disappearing due to aos animation
-using .project-card.active:nth-child(x):hover{height:xxpx,display:block (flex before line335),opacity:0} not really solving probs as originally set flex display
+using .project-card.active:nth-child(x):hover{height:xxpx,display:block (flex before (after line 340 347 358)),opacity:0} not really solving probs as originally set flex display
 so move aos from project-card to projects-container solves the issue
 3 but would like to retain features of aos for each individual project-card &
 when click read-less div btn, card may vibrate as card's shrinking & cursor on the edge (to hover or not to hover - to expand or not to expand (card hover expand @even read-less)
@@ -477,6 +482,7 @@ this div is called healdline-ctrl (className); introduced in line 96*/
 /*now below design of read-more div btn design*/
 .project-card .headline-ctrl {border:2px solid white}
 .project-card .headline-ctrl .read-more {border:2px solid red;
+    margin-bottom: 8px;
     font-size:13px;
     /*padding: 6px;*/
     /*space up/down left/right when hover read-more div; also centralise txt (if no limit on width otherwise skew (up left meet criteria first) rather than expand div 4 directions*/
@@ -493,27 +499,63 @@ this div is called healdline-ctrl (className); introduced in line 96*/
     height: 30px;
     padding: 16px;
     /*fixed w/h original pos top left (space to right bottom; padding-> add padding to 4 directions,expand in 4 dir, not centre, still top left +padding*/
-    /*w/h too small; expand top/left; meet padding-top padding-left criteria; skew inner & outer overlap 45 deg dir right bottom southeast
-    display: flex;
-    justify-content: center;align-items: center;*/
+    /*w/h too small; expand top/left; meet padding-top padding-left criteria; skew inner & outer overlap 45 deg dir right bottom southeast*/
+    /*display: flex;
+    justify-content: center;align-items: center; /*opt with child w/h 100%; needed if parent has padding>0*/
+
+    /*height:18px;padding:7px;*/
+    height:32px; /*not 100% but same as githublinksBtns 7*2px padding-top/buttom+18px height*/
+    width:23%;
+    padding:0px;
+
+    position:relative; /*opt for below .read-more div; but must for read-more::be4 after*/
+
 }
 .project-card .headline-ctrl .read-more div{border:1px solid yellow;
     /*width: 100%;height: 100%;*/
     /*if parent w/h too big, parent display flex+child w/h 100%=inner centered child expand (inside child not centered);
     still centre but not expand if no child w/h 100%
     if parent w/h too small, parent display flex+child w/h 100%=inner centered child shrink;still centre but not shrink (normalsize) if no child w/h 100%
+     if parent spacify w/h whether small or large, child w/h 100% fill parent el - no need display flex in parent;
+     but if padding in parent, at least top & left will have some spaces between parent & child div, depending on size of parent & outer div limit (beyond parent) - probabaly no gap @right/bottom
      */
     /*padding: 0;margin:0; /*top left first*/
 
-    
+    /*position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;/*opt*/
+
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(255,255,255,.05);
+    box-shadow: 0 15px 35px rgba(0,0,0,.2);
+    border-top:1px solid rgba(255,255,255,.1);
+    border-bottom:1px solid rgba(255,255,255,.1);
+    border-radius:30px;
+    position:relative;
+    backdrop-filter: blur(15px);
+    /*color:#fff;z-index:higer then parent el?*/
+    overflow: hidden;
+    transition: .5s;
+
+    display: flex;align-items: center;justify-content: center;
 }
-    /*
-.project-card .headline-ctrl .read-more:hover{
+
+.project-card .headline-ctrl .read-more:hover div{
     letter-spacing: 1px;
 }
-.project-card .headline-ctrl .read-more::before{
+/*.project-card .headline-ctrl .read-more div::before{
     content: '';
-    position:absolute;/*to proj-content
+    position:absolute;/*to proj-content (or headline-ctrl)
+}*/
+.project-card .headline-ctrl .read-more div::before{
+    content: '';
+    position:absolute;/*to read-more div (then maybe read-more (opt), then headline-ctrl (could be opt but specified in line 96) then proj-content
+    now read-more relative pos for read-more::b4 after below*/
     top:0;
     right:0;
     width:50%;
@@ -523,12 +565,12 @@ this div is called healdline-ctrl (className); introduced in line 96*/
     border:1px solid red;
     transition:.5s;
 }
-.project-card .headline-ctrl .read-more:hover::before{
+.project-card .headline-ctrl .read-more:hover div::before{
     transform:skewX(45deg) translateX(15%);
 }
 .project-card .headline-ctrl .read-more::after {
     content:'';
-    position: absolute;
+    position: absolute; /*to read-more then headline-ctrl then proj-content*/
     left:40%;
     width:15px;
     height: 10px;
@@ -537,10 +579,73 @@ this div is called healdline-ctrl (className); introduced in line 96*/
     border-radius: 10px;
     transition: .5s;
     z-index: -1;
-    filter:blur(3px);
+    /*filter:blur(3px);*/
+
+    transition-delay:0s ;
+}
+.project-card .headline-ctrl .read-more:hover::after {
+    bottom:0px;
+    height:50%;
+    width:100%;
+    left:0;
+    border-radius: 30px;
+    transition-delay: .5s;
+}
+.project-card .headline-ctrl .read-more::before {
+    content:'';
+    position: absolute; /*to read-more then headline-ctrl then proj-content*/
+    left:40%;
+    width:15px;
+    height: 10px;
+    top:-5px;
+    background: #f00;
+    border-radius: 10px;
+    transition: .5s;
+    z-index: -1;
+    /*filter:blur(3px);*/
+
+    transition-delay:0s ;
+}
+.project-card .headline-ctrl .read-more:hover::before {
+    top:0px;
+    height:50%;
+    width:100%;
+    left:0%;
+    border-radius: 30px;
+    transition-delay: .5s;
+}/*
+.project-card:nth-child(2) .project-content .headline-ctrl .read-more:before,
+.project-card:nth-child(2) .project-content .headline-ctrl .read-more:after{
+    background: #ff1f71;
+    box-shadow: 0 0 5px #ff1f71,
+    0 0 15px #ff1f71,
+    0 0 30px #ff1f71,
+    0 0 60px #ff1f71;
 }*/
-
-
+.project-card .project-content .headline-ctrl .read-more:nth-child(2):before,
+.project-card .project-content .headline-ctrl .read-more:nth-child(2):after{
+    background: #ff1f71;
+    box-shadow: 0 0 5px #ff1f71,
+    0 0 15px #ff1f71,
+    0 0 30px #ff1f71,
+    0 0 60px #ff1f71;
+}
+.project-card:nth-child(1) .project-content .headline-ctrl .read-more:before,
+.project-card:nth-child(1) .project-content .headline-ctrl .read-more:after{
+    background: #1eff45;
+    box-shadow: 0 0 5px #1eff45,
+    0 0 15px #1eff45,
+    0 0 30px #1eff45,
+    0 0 60px #1eff45;
+}
+.project-card:nth-child(3) .project-content .headline-ctrl .read-more:before,
+.project-card:nth-child(3) .project-content .headline-ctrl .read-more:after{
+    background: #2bd2ff;
+    box-shadow: 0 0 5px #2bd2ff,
+    0 0 15px #2bd2ff,
+    0 0 30px #2bd2ff,
+    0 0 60px #2bd2ff;
+}
 
 
 
@@ -552,9 +657,10 @@ this div is called healdline-ctrl (className); introduced in line 96*/
 
 
     /*SwiperModal*/
-#mySwiperModal{
-    z-index: 5;
-
+/*#mySwiperModal{*/
+.swiperModal{
+    z-index: 35;
+    /*display: block;/*opt*/
 
     font-size: 14px;
     color: #000;
@@ -565,7 +671,8 @@ this div is called healdline-ctrl (className); introduced in line 96*/
     top:0;
     left:0;
     background: #111;
-    min-height: 100vh;
+    /*min-height: 100vh;*/
+    min-height: 100%;
 }
 
 /* 关闭按钮 */

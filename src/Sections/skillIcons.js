@@ -2,6 +2,9 @@ import jupiterGlosV from '../staticAssets/videos/eventManager/ZHENGPIAN.webm'
 import twitterNotification1 from '../staticAssets/videos/twitterClone/notification1.webm'
 import tourOverview from '../staticAssets/videos/tours/tour-overview.webm'
 import aroundWeb from '../staticAssets/videos/aroundWeb/AroundWeb.mp4'
+import memes from "../staticAssets/videos/memes/memes.webm";
+import account from '../staticAssets/videos/account/account.webm'
+import todos from '../staticAssets/videos/todos/todos.webm'
 
 export const icons=[
     {
@@ -64,13 +67,34 @@ export const icons=[
                 imgTxt:"Around Web",
                 imgType:'video',
                 innerModalShown:true
-            },
+            },/*
             {
                 imgSrc:"http://static.runoob.com/images/demo/demo2.jpg",
                 imgTxt:"React NBA - in progress - to be added",
                 imgType:'picture',
                 innerModalShown:false
-            }
+            },*/
+            {
+                imgTxt:"Memes Creator",
+                imgSrc:memes,
+                imgType: "video",
+                innerModalShown:false,
+                github: 'https://github.com/iamjustnobody/memes-creator'
+            },
+            {
+                imgTxt:"My Account",
+                imgSrc:account,
+                imgType: "video",
+                innerModalShown:false,
+                github: 'https://github.com/iamjustnobody/simple-accounting',
+            },
+            {
+                imgTxt:"Todo List",
+                imgSrc:todos,
+                imgType: "video",
+                innerModalShown:false,
+                github: 'https://github.com/iamjustnobody/react-todo',
+            },
         ],
         modalShown:false
     },

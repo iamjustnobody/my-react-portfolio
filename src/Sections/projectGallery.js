@@ -232,7 +232,7 @@ export const gallery=[
         modalShown:false,
         github: "https://github.com/iamjustnobody/Intouresting",
         readMore:false
-    },
+    },/*
     {
         projTitle:"Memes Creator",
         projImgSrc:memes,
@@ -246,7 +246,7 @@ export const gallery=[
             }],
         modalShown:false,
         github: 'https://github.com/iamjustnobody/memes-creator'
-    },
+    },*/
     {
         projTitle:"1-2-1 Chat Room",
         projImgSrc:msg121,
@@ -276,7 +276,7 @@ export const gallery=[
         modalShown:false,
         github: "https://github.com/iamjustnobody/121ChatRoom",
         readMore:false
-    },
+    },/*
     {
         projTitle:"My Account",
         projImgSrc:account,
@@ -306,5 +306,5 @@ export const gallery=[
         modalShown:false,
         github: 'https://github.com/iamjustnobody/react-todo',
         readMore:false
-    },
+    },*/
 ]

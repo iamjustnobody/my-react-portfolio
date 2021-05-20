@@ -165,8 +165,7 @@ export const ProjectCards = React.forwardRef((props,ref) =>{
     return (
         <div id="ProjectCards" className="portfolio-container" ref={ref}>
             <h1 className="heading">Project</h1>
-            <div className='projects-container' data-aos="fade-up" data-aos-easing="linear"
-                 data-aos-duration="1500">
+            <div className='projects-container' >
                 {projGallery.map((_el,_index)=>{
                     return <>
                                 <div className={_el.readMore?'project-card active':'project-card'}
