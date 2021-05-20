@@ -88,7 +88,17 @@
    /* height:175px *//*opt*/
     /*overflow: auto; or hidden*/ /*height: auto;*/
 }
+.project-card .project-content .headline-ctrl{
+    width: 100%;
+    height:35px; /*so width& height in inside project-headline are 100%*/
+    display: flex;
+    justify-content:flex-start;align-items: center; /*keep vertically aligned & name+github+slidesLinksBtns pushed to left-start*/
+    position: relative;/*for .project-card .headline-ctrl .read-more:before skewX div btn*/
+}/*now introduce readmore btn by introducing headline-ctrl to incl project-headline div (in html projectCardsJs)
+see line 477 for read-more div btn design*/
 .project-card .project-content .project-headline{ /*border: 2px solid white;*/
+    flex:1; /*pushing newly introduced readmore btn to the right edge*/
+
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -120,16 +130,19 @@
     font-family: 'Reggae One', cursive; /*font-family: 'Josefin Sans', sans-serif;*/
 }
 .project-name, .project-slides,.project-githubLink{ /*border:2px solid white;*/
-    margin-left:10px
+    /*margin-left:10px*/ /*making some space for new readmore div btn*/
 }
 .project-slides,.project-githubLink{ /*border:2px solid red;*/
-    margin-left: 17px;
+    margin-left: 8px;/*same margin of project-card:b4After to project-card/*17px;*/
     padding: 7px; /*expand circle; expand h&w; display flex wont expand circle*/
     border-radius: 50%;
-    height: 20px;
-    width: 20px; /*enough -> not beyond circle*/
+    height: 18px;/*20px;*/
+    width: 18px;/*20px; /*enough -> not beyond circle*/
     position: relative;
     color: #fff;
+/*making some space for new readmore div btn & below code*/
+    display: flex;
+    align-items: center;
 }
 .project-githubLink i{color: #fff}
 .project-slides:before,.project-githubLink:before,.project-slides:after,.project-githubLink:after{
@@ -183,7 +196,7 @@
     background: linear-gradient(45deg,#ff0000,#ffc107);
 }
 
-
+/*
 .project-card:nth-child(1):hover{height:468px}
 .project-card:nth-child(2):hover{height:508px}
 .project-card:nth-child(3):hover{height:530px}
@@ -192,7 +205,12 @@
 .project-card:nth-child(6):hover{height:320px}
 .project-card:nth-child(7):hover{height:266px}
 .project-card:nth-child(8):hover{height:320px}
-.project-card:nth-child(9):hover{height:270px}
+.project-card:nth-child(9):hover{height:270px}*/
+.project-card:hover{
+    position: relative;
+    height:250px; /*prevly 400px*/
+    overflow: hidden;
+} /*see line335 for more detailed children hover height*/
 
 .project-name p{ position: relative;
     text-shadow: 0 0 10px #00b3ff, 0 0 20px #00b3ff, 0 0 40px #00b3ff, 0 0 80px #00b3ff, 0 0 120px #00b3ff;
@@ -249,7 +267,9 @@
     /*width & height calc(100%+3px)*/
     /*z-index: -1;*/
     /*background: linear-gradient(235deg,#89ff00,#010615,#00bcd4);*/
+    /*border:1px solid white; disappear when hover */
 }
+/*.project-card:hover::before{border:1px solid white}/*show nothing*/
 .project-card:after{
     content: "";
     /*background: white;*/
@@ -291,9 +311,11 @@
 }
 
 
+
+
 .project-card .project-content{
     position:absolute;
-    bottom:10px;
+    top:225px;/*215 unhover proj-card height +some margins; /*bottom:10px;/*updated - readmore btn*/
     left:10px;
     right:10px;
     /*background: red;*/
@@ -311,9 +333,225 @@
     color:navajowhite; /*for project-name & project-summary*/
 }
 
+.project-card:nth-child(1) .project-content {top: 225px;}
+.project-card:nth-child(2) .project-content {top: 200px;}
+.project-card:nth-child(4) .project-content{top: 185px;}
+.project-card:nth-child(5) .project-content{top: 180px;}
+.project-card:nth-child(7) .project-content {top: 170px;}
+.project-card:nth-child(8) .project-content{top: 185px;}
+.project-card:nth-child(9) .project-content{top: 200px;}
+/*.project-card .project-content{position: relative}*/
+
+.project-card:nth-child(1):hover{height:370px}
+.project-card:nth-child(3):hover{height:365px}
+.project-card:nth-child(6):hover{height:330px}
+.project-card:nth-child(2):hover{height:340px}
+.project-card:nth-child(4):hover{height:305px}
+.project-card:nth-child(5):hover{height:315px}
+.project-card:nth-child(7):hover{height:270px}
+.project-card:nth-child(8):hover{height:325px}
+.project-card:nth-child(9):hover{height:280px}
+/*.project-card .project-content::before{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(transparent,#3f3f3f);
+} /*acting as mask but making .project-content position relative (actually proj-conent abs ok)
+/*.project-card position relative but already has :before & :after (shadow) -> need another before for mask*/
+/*so create another proj-card child by adding div className mask in parallel w (/after) pro-content div*/
+
+/*but OT uses :before position abs to proj-content (see below two)
+ - either adding div mask inside proj-content or project-content:b4*/
+/*.project-card:hover .mask{
+     position: absolute;
+     bottom: -8px;
+     left: -8px;
+     right:-8px;
+     height:320px;
+     background: linear-gradient(transparent,#3f3f3f);
+     /*z-index: 2;opt
+     border:3px solid red
+ }/*position abs to overflown proj-content; not absolute to hidden proj-content*/
+/*still need to abs position to proj-content (proj-content's child);
+proj-content can also be in absolute position (often relative pos)*/
+/*.project-card .project-content::before{
+    content:'';!!!!!!!
+    position: absolute;
+    bottom:-8px;
+    left: -8px;
+    right:-8px;
+    height: 50px;
+    opacity: 0;
+}
+.project-card:hover .project-content::before{
+    opacity: 1;
+    background: linear-gradient(transparent,#3f3f3f);
+    border:3px solid red;
+    z-index:10
+}/*again absolute pos to hidden bottom of proj-content*/
+
+.project-card:hover .mask{
+    content: '';
+    position: absolute;
+    /*bottom: -8px;left: -8px;right:-8px;*/
+    bottom: 0px;left: 0px;right:0px;
+    height:100px;
+    background: linear-gradient(transparent,#060c21);/*#060c21,#262626,#3f3f3f*/
+    border:1px solid yellow;
+    z-index:2 /*higher than proj-content but need to limit height of mask such that github links btn not covered underneath*/
+}
+/*.project-card:hover{border:1px solid white}*/
+/*makes mask pos absolute to proj-card instead; but proj-card has before&after already
+so adding div outside proj-content + inside proj-card + in parallel after proj-content;
+above is like .project-card:hover::after*/
+.project-card:nth-child(1):hover .mask{height:100px}
+.project-card:nth-child(3):hover .mask{height:100px}
+.project-card:nth-child(6):hover .mask{height:66px}
+.project-card:nth-child(2):hover .mask{height:100px}
+.project-card:nth-child(4):hover .mask{height:80px}
+.project-card:nth-child(5):hover .mask{height:95px}
+.project-card:nth-child(7):hover .mask{height:60px}
+.project-card:nth-child(8):hover .mask{height:98px}
+.project-card:nth-child(9):hover .mask{height:40px}
+.project-card .more{opacity: 0}
+.project-card:hover .more{
+    opacity: 1;
+    background: red;
+    position: absolute;
+    left:10px;
+    bottom:10px;
+    /*gap between proj-card & proj-content is the abs pos of proj-content,e.g. left:10px;
+    Not because margin or padding*/
+    width: 50px;
+    height: 30px;
+    z-index:2;
+
+    opacity: 0;
+    background: none;
+    display: none;
+}
+.project-card:hover,.project-card:hover .project-content{border:1px solid red}
+/*gap between proj-card & proj-content is the abs pos of proj-content,e.g. left:10px;
+    Not because margin or padding*/
+/*.project-card:hover.active{height:auto} not working; and NOT .project-card:nth-child(2):hover.active below*/
+.project-card.active:nth-child(1):hover{height:468px}
+.project-card.active:nth-child(2):hover.active{height:508px}
+.project-card.active:nth-child(3):hover.active{height:530px}
+.project-card.active:nth-child(4):hover.active{height:320px}
+.project-card.active:nth-child(5):hover.active{height:445px}
+.project-card.active:nth-child(6):hover.active{height:320px}
+.project-card.active:nth-child(7):hover.active{height:266px}
+.project-card.active:nth-child(8):hover.active{height:320px}
+.project-card.active:nth-child(9):hover.active{height:270px}
+/*.project-card:hover.active{overflow: auto;height: auto} blink blink???why not working as OT?*/
+/*the above lines of codes from line 319 works - summary
+1: the more div (onclickBtn) outside project-content (inparallelwith/after proj-content)
+inside proj-card; position abs to outside proj-card
+2, everytime changing readMore field changes projGalleryState so rerendering proj-card causing proj-card disappearing due to aos animation
+using .project-card.active:nth-child(x):hover{height:xxpx,display:block (flex before line335),opacity:0} not really solving probs as originally set flex display
+so move aos from project-card to projects-container solves the issue
+3 but would like to retain features of aos for each individual project-card &
+when click read-less div btn, card may vibrate as card's shrinking & cursor on the edge (to hover or not to hover - to expand or not to expand (card hover expand @even read-less)
+4 so decide to move the more div btn to be in line w github links buttons on top of proj-content (inside pro-content)
+so pos abs to proj-content (projcontent continues to be pos abs-> pos abs to pos abs is ok although normally pos abs to pos  relative
+so at top of proj-content -> no more prev issues of more div btn at the bottom of overflown proj-content & at the hidden part of overflown proj-content so morediv tbn was invisible
+so aos can be moved back from proj-container to proj-card
+so although the above codes works, now introducing alternative
+(firstly removing more div btn from end of div proj-card  or just making .more css opacity:0 or display:none
+then adding another one in line w githubLinksBtns inside proj-content (proj-headline flex 1)
+so proj-name& github& demoLink all flex-start whilst this new div pushed to right (or float right if inline)
+or just project-content:before or :after so pos abs to proj-content -- but above better as can be pushed & re-arranged
+but still need to change proj-card's height thus projGallery's state so aos still need to be in projects-container (not moving back to each proj-card)*/
+/*.project-card:hover .project-content:after{ /* or .project-card .project-content:after{
+    position: absolute; /*same as .project-content
+    right:0;
+    top:0;
+    border:1px solid red;
+    content:'';/* content:'read more'  'read less' data-attr
+    width:124px; /*depends on proj-name length,
+    height: 34px; /*same as githubLinkBtns height+padding*2
+} /*better to add a div inside html (projectcardJs - proj-headline)
+this div is called healdline-ctrl (className); introduced in line 96*/
+/*now below design of read-more div btn design*/
+.project-card .headline-ctrl {border:2px solid white}
+.project-card .headline-ctrl .read-more {border:2px solid red;
+    font-size:13px;
+    /*padding: 6px;*/
+    /*space up/down left/right when hover read-more div; also centralise txt (if no limit on width otherwise skew (up left meet criteria first) rather than expand div 4 directions*/
+    /*or display flex justify-content & align-items center*/
+    /*background: rgba(255,255,255,.05);
+    box-shadow: 0 15px 35px rgba(0,0,0,.2);
+    border-top:1px solid rgba(255,255,255,.1);
+    border-bottom:1px solid rgba(255,255,255,.1);
+    border-radius:30px;
+    position:relative;
+    backdrop-filter: blur(15px);*/
+    /*
+    width: 100px;
+    height: 30px;
+    padding: 16px;
+    /*fixed w/h original pos top left (space to right bottom; padding-> add padding to 4 directions,expand in 4 dir, not centre, still top left +padding*/
+    /*w/h too small; expand top/left; meet padding-top padding-left criteria; skew inner & outer overlap 45 deg dir right bottom southeast
+    display: flex;
+    justify-content: center;align-items: center;*/
+}
+.project-card .headline-ctrl .read-more div{border:1px solid yellow;
+    /*width: 100%;height: 100%;*/
+    /*if parent w/h too big, parent display flex+child w/h 100%=inner centered child expand (inside child not centered);
+    still centre but not expand if no child w/h 100%
+    if parent w/h too small, parent display flex+child w/h 100%=inner centered child shrink;still centre but not shrink (normalsize) if no child w/h 100%
+     */
+    /*padding: 0;margin:0; /*top left first*/
+
+    
+}
+    /*
+.project-card .headline-ctrl .read-more:hover{
+    letter-spacing: 1px;
+}
+.project-card .headline-ctrl .read-more::before{
+    content: '';
+    position:absolute;/*to proj-content
+    top:0;
+    right:0;
+    width:50%;
+    height:100%;
+    background: linear-gradient(to left, rgba(255,255,255,.15),transparent);
+    transform:skewX(45deg) translateX(-100%);
+    border:1px solid red;
+    transition:.5s;
+}
+.project-card .headline-ctrl .read-more:hover::before{
+    transform:skewX(45deg) translateX(15%);
+}
+.project-card .headline-ctrl .read-more::after {
+    content:'';
+    position: absolute;
+    left:40%;
+    width:15px;
+    height: 10px;
+    bottom:-5px;
+    background: #f00;
+    border-radius: 10px;
+    transition: .5s;
+    z-index: -1;
+    filter:blur(3px);
+}*/
 
 
-/*SwiperModal*/
+
+
+
+
+
+
+
+
+
+
+    /*SwiperModal*/
 #mySwiperModal{
     z-index: 5;
 

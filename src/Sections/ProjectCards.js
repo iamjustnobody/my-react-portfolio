@@ -152,14 +152,25 @@ export const ProjectCards = React.forwardRef((props,ref) =>{
     },[globalSwiperShownIndicator,setGlobalSwiperShownIndicator])
 
 
+    const handleCardHeight=async (index)=>{
+        await setProjGallery(projGallery.map((el,id)=>
+        //{return (index==id?({...el,modalShown:!el.modalShown}):el)}
+                (index==id?({...el,readMore:!el.readMore}):el)
+        ))
+        //just like handleModal
+    }
+
+//data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1500" was in project-card
+// now introduce readMore everytime changeing readMore field re-render hovered proj-card (projCard disappear fade/ease aos) so move aos to projects-container
     return (
         <div id="ProjectCards" className="portfolio-container" ref={ref}>
             <h1 className="heading">Project</h1>
-            <div className='projects-container'>
+            <div className='projects-container' data-aos="fade-up" data-aos-easing="linear"
+                 data-aos-duration="1500">
                 {projGallery.map((_el,_index)=>{
                     return <>
-                                <div className='project-card' data-aos="fade-up" data-aos-easing="linear"
-                                     data-aos-duration="1500">
+                                <div className={_el.readMore?'project-card active':'project-card'}
+                                     >
                                     <div className='imgBox'>
                                         {projGallery[_index].imgType=="video"?
                                         <video className='imgBx-image' controls>
@@ -168,6 +179,7 @@ export const ProjectCards = React.forwardRef((props,ref) =>{
                                         :<img className='imgBx-image' src={projGallery[_index].projImgSrc}/>}
                                     </div>
                                     <div className='project-content'>
+                                        <div className='headline-ctrl'>
                                         <div className='project-headline'>
                                             <div className='project-name'><p data-name={_el.projTitle}>{_el.projTitle}</p></div>
                                             <div className='project-githubLink'>
@@ -179,8 +191,13 @@ export const ProjectCards = React.forwardRef((props,ref) =>{
                                                 <i className="fas fa-external-link-alt" title="demo & preview"></i>
                                             </div>
                                         </div>
+                                            <div className='read-more' onClick={()=>{handleCardHeight(_index)}}><div>{_el.readMore?'Read Less':"Read More"}</div></div>
+                                        </div>
                                         <div className='project-summary'>{_el.projSummary.split("\n").map((_des,_key) => (<div key={_key}>{_des}</div>))}</div>
+
                                     </div>
+                                    <div className={_el.readMore?'':'mask'}></div>
+                                    <div className='more' onClick={()=>{handleCardHeight(_index)}}>{_el.readMore?'read less':'read more'}</div>
                                 </div>
                                 {_el.modalShown?
                                 <div className='swiperModal' id='mySwiperModal'>

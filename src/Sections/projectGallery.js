@@ -48,7 +48,8 @@ export const gallery=[
             innerImgType: "video"
         }],
         modalShown:false,
-        github:'https://github.com/iamjustnobody/around-web'
+        github:'https://github.com/iamjustnobody/around-web',
+        readMore:false
     },
     {
         projTitle: 'Event Manager',
@@ -106,7 +107,8 @@ export const gallery=[
             }
         ],
         modalShown:false,
-        github: "https://github.com/iamjustnobody/Event_Manager"
+        github: "https://github.com/iamjustnobody/Event_Manager",
+        readMore:false
     },
     {
         projTitle:"mini-Twitter",
@@ -165,7 +167,8 @@ export const gallery=[
             },
         ],
         modalShown:false,
-        github: "https://github.com/iamjustnobody/mini-twitter"
+        github: "https://github.com/iamjustnobody/mini-twitter",
+        readMore:false
     },
     {
         projTitle:"Evernote",
@@ -189,7 +192,8 @@ export const gallery=[
                 innerImgType: "video"
             }],
         modalShown:false,
-        github: 'https://github.com/iamjustnobody/my-ever-note'
+        github: 'https://github.com/iamjustnobody/my-ever-note',
+        readMore:false
     },
     {
         projTitle:"Intouresting",
@@ -226,7 +230,8 @@ export const gallery=[
                 innerImgType: "video"
             }],
         modalShown:false,
-        github: "https://github.com/iamjustnobody/Intouresting"
+        github: "https://github.com/iamjustnobody/Intouresting",
+        readMore:false
     },
     {
         projTitle:"Memes Creator",
@@ -269,7 +274,8 @@ export const gallery=[
                 innerImgType: "video"
             }],
         modalShown:false,
-        github: "https://github.com/iamjustnobody/121ChatRoom"
+        github: "https://github.com/iamjustnobody/121ChatRoom",
+        readMore:false
     },
     {
         projTitle:"My Account",
@@ -283,7 +289,8 @@ export const gallery=[
                 innerImgType: "video"
             }],
         modalShown:false,
-        github: 'https://github.com/iamjustnobody/simple-accounting'
+        github: 'https://github.com/iamjustnobody/simple-accounting',
+        readMore:false
     },
     {
         projTitle:"Todo List",
@@ -297,6 +304,7 @@ export const gallery=[
                 innerImgType: "video"
             }],
         modalShown:false,
-        github: 'https://github.com/iamjustnobody/react-todo'
+        github: 'https://github.com/iamjustnobody/react-todo',
+        readMore:false
     },
 ]
