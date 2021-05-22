@@ -24,7 +24,7 @@
 
     /*background: #010615;*/
 }
-
+.project-aos{/*border:1px solid red*/;padding: 0;margin:40px;height: auto;width: auto}
 .project-card{
     display: flex;
     /*flex-direction: column;*/
@@ -32,11 +32,11 @@
     align-items: center;
     height:215px; /*adjustable dep on pic size*/
     width:380px;
-    margin: 40px;
+    /*margin:40px;*/
     position: relative;
 
     transition: 0.5s;
-    border:2px solid red;
+    /*border:2px solid red;!*/
    /* background-color: #060c21; /*#010615;*/
 
 }
@@ -44,7 +44,7 @@
     height: 400px; /*overflow: hidden or auto;*/ /*min-height: 215px; height: auto;*/
    /* background:  #060c21;*/
 }
-.project-card .imgBox{ border:3px solid red;
+.project-card .imgBox{ /*border:3px solid red;!*/
     position: absolute;
     top:0;
     left:0;
@@ -59,13 +59,14 @@
 }
 /*.project-card .imgBox img{*/ /*or .imgBx-image NOT project-image*/
 .project-card .imgBox .imgBx-image{
-    /*border:5px solid yellowgreen;/*not filling up imgBox*/
+    /*border:5px solid yellowgreen;!/*not filling up imgBox*/
     opacity: 0.3;
     /*max-width: 100%;*/
     transition: 0.5s;
 
     /*margin:0; for top left no gap but display real image size*/
     width: 100%;/*height: 100%; expandable as project-card expands when hover*/
+    height: 215px;
 }
 /*.project:hover{height:500px}*/
 /*.project-card:hover .imgBox img{*/
@@ -76,13 +77,13 @@
 
 
 
-.project-card:hover{ border: 2px solid white;
+.project-card:hover{ /*border: 2px solid white;!*/
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
-.project-card:hover .project-content{ border: 2px solid greenyellow;
+.project-card:hover .project-content{ /*border: 2px solid greenyellow;!*/
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -90,16 +91,18 @@
    /* height:175px *//*opt*/
     /*overflow: auto; or hidden*/ /*height: auto;*/
 }
-.project-card .project-content .headline-ctrl{ border: 2px solid deepskyblue;
+.project-card .project-content .headline-ctrl{ /*border: 2px solid deepskyblue;!*/
     width: 100%;
     height:35px; /*so width& height in inside project-headline are 100%*/
+    /*margin-bottom:8px; /*or height:46px; no margin-bottom*/
     display: flex;
     justify-content:flex-start;align-items: center; /*keep vertically aligned & name+github+slidesLinksBtns pushed to left-start*/
     position: relative;/*for .project-card .headline-ctrl .read-more:before skewX div btn*/
-    /*margin-bottom: 8px;/* this align w project-headline below; this margin shoule be applied to read-more div btn*/
+    margin-bottom: 7px;/* this align w project-headline below; this margin shoule be applied to read-more div btn (b4/after+/-5px)*/
+    /*margin bottom to proj-summary; margin-top of headline-ctrl to top of proj-content => abs pos top of project-content to imgBox*/
 }/*now introduce readmore btn by introducing headline-ctrl to incl project-headline div (in html projectCardsJs)
 see line 482 for read-more div btn design*/
-.project-card .project-content .project-headline{ border: 2px solid white;
+.project-card .project-content .project-headline{ /*border: 2px solid white;!*/
     flex:1; /*pushing newly introduced readmore btn to the right edge*/
 
     display: flex;
@@ -108,11 +111,11 @@ see line 482 for read-more div btn design*/
     width: 100%;
     padding-top:0;
     padding-bottom: 0; /*or height:100%*/
-    height:35px; /* was 10% but then height of .project-content 175px -> opt now */
-    margin-bottom:8px; /*or height:46px; no margin-bottom*/
+    height:100%;/* or 35px; /* was 10% but then height of .project-content 175px -> opt now */
+    /*margin-bottom:7px; /*or height:46px; no margin-bottom*/
 }
 .project-card .project-content .project-headline .project-name{font-weight: bold;font-size:18px}
-.project-card .project-content .project-summary{ /*border: 2px solid white;*/
+.project-card .project-content .project-summary{ /*border: 2px solid greenyellow;!*/
     flex:1;
     width: 100%;
 }
@@ -316,9 +319,9 @@ see line 482 for read-more div btn design*/
 
 
 
-.project-card .project-content{
+.project-card .project-content{ /*border:2px solid yellow;!*/
     position:absolute;
-    top:225px;/*215 unhover proj-card height +some margins margin-top to imgbox/imgbx;
+    top:228px;/*215 unhover proj-card height +some margins margin-top to imgbox/imgbx;
     /*prevly bottom:10px;/*updated - readmore btn*/
     left:10px;
     right:10px;
@@ -336,26 +339,26 @@ see line 482 for read-more div btn design*/
     opacity: 1;
     color:navajowhite; /*for project-name & project-summary*/
 }
-
-.project-card:nth-child(1) .project-content {top: 225px;}
-.project-card:nth-child(2) .project-content {top: 200px;}
+/*start adding readmore div btn*/ /*.project-card .project-content {top: 225px;} /*see line 323 above */
+/*.project-card:nth-child(1) .project-content {top: 225px;}
+.project-card:nth-child(2) .project-content {top: 225px;}
 .project-card:nth-child(4) .project-content{top: 185px;}
 .project-card:nth-child(5) .project-content{top: 180px;}
 .project-card:nth-child(7) .project-content {top: 170px;}
 .project-card:nth-child(8) .project-content{top: 185px;}
 .project-card:nth-child(9) .project-content{top: 200px;}
-.project-card:nth-child(6) .project-content{top: 200px;}
+.project-card:nth-child(6) .project-content{top: 200px;}*/
 /*.project-card .project-content{position: relative}*/
 
 .project-card:nth-child(1):hover{height:370px}
 .project-card:nth-child(3):hover{height:365px}
-.project-card:nth-child(6):hover{height:330px}
+.project-card:nth-child(6):hover{height:300px}
 .project-card:nth-child(2):hover{height:340px}
 .project-card:nth-child(4):hover{height:305px}
-.project-card:nth-child(5):hover{height:315px}
+.project-card:nth-child(5):hover{height:375px}
 .project-card:nth-child(7):hover{height:270px}
 .project-card:nth-child(8):hover{height:325px}
-.project-card:nth-child(9):hover{height:280px}
+.project-card:nth-child(9):hover{height:280px} /*.project-card:hover{height:268px} prevly250px (line217) but if not many texts in summary*/
 /*.project-card .project-content::before{
     position: absolute;
     bottom: 0;
@@ -404,19 +407,19 @@ proj-content can also be in absolute position (often relative pos)*/
     bottom: 0px;left: 0px;right:0px;
     height:100px;
     background: linear-gradient(transparent,#060c21);/*#060c21,#262626,#3f3f3f*/
-    border:1px solid yellow;
+    /*border:1px solid yellow;!*/
     z-index:2 /*higher than proj-content but need to limit height of mask such that github links btn not covered underneath*/
 }
 /*.project-card:hover{border:1px solid white}*/
 /*makes mask pos absolute to proj-card instead; but proj-card has before&after already
 so adding div outside proj-content + inside proj-card + in parallel after proj-content;
 above is like .project-card:hover::after*/
-.project-card:nth-child(1):hover .mask{height:100px}
-.project-card:nth-child(3):hover .mask{height:100px}
-.project-card:nth-child(6):hover .mask{height:66px}
-.project-card:nth-child(2):hover .mask{height:100px}
-.project-card:nth-child(4):hover .mask{height:80px}
-.project-card:nth-child(5):hover .mask{height:95px}
+.project-card:nth-child(1):hover .mask{height:100px} /*.project-card:hover .mask{border:1px solid greenyellow}*/
+.project-card:nth-child(3):hover .mask{height:95px}
+.project-card:nth-child(6):hover .mask{height:30px}
+.project-card:nth-child(2):hover .mask{height:70px}
+.project-card:nth-child(4):hover .mask{height:34px}
+.project-card:nth-child(5):hover .mask{height:105px}
 .project-card:nth-child(7):hover .mask{height:60px}
 .project-card:nth-child(8):hover .mask{height:98px}
 .project-card:nth-child(9):hover .mask{height:40px}
@@ -437,19 +440,19 @@ above is like .project-card:hover::after*/
     background: none;
     display: none;
 }
-.project-card:hover,.project-card:hover .project-content{border:1px solid red}
+.project-card:hover,.project-card:hover .project-content{/*border:1px solid red!*/}
 /*gap between proj-card & proj-content is the abs pos of proj-content,e.g. left:10px;
     Not because margin or padding*/
-/*.project-card:hover.active{height:auto} not working; and NOT .project-card:nth-child(2):hover.active below*/
-.project-card.active:nth-child(1):hover{height:468px}
-.project-card.active:nth-child(2):hover.active{height:508px}
-.project-card.active:nth-child(3):hover.active{height:530px}
-.project-card.active:nth-child(4):hover.active{height:320px}
-.project-card.active:nth-child(5):hover.active{height:445px}
-.project-card.active:nth-child(6):hover.active{height:320px}
-.project-card.active:nth-child(7):hover.active{height:266px}
+/*.project-card:hover.active{height:auto} not working; .project-card:nth-child(2):hover.active below; .project-card.active:nth-child(7):hover.active or .project-card.active:nth-child(7):hover*/
+.project-card:nth-child(1):hover.active{height:460px}
+.project-card:nth-child(2):hover.active{height:515px}
+.project-card:nth-child(3):hover.active{height:520px}
+.project-card:nth-child(4):hover.active{height:350px}
+.project-card:nth-child(5):hover.active{height:485px}
+.project-card:nth-child(6):hover.active{height:330px}
+/*.project-card.active:nth-child(7):hover.active{height:266px}
 .project-card.active:nth-child(8):hover.active{height:320px}
-.project-card.active:nth-child(9):hover.active{height:270px}
+.project-card.active:nth-child(9):hover.active{height:270px} /*.project-card:hover{height:268px} in here not working*/
 /*.project-card:hover.active{overflow: auto;height: auto} blink blink???why not working as OT?*/
 /*the above lines of codes from line 319 works - summary
 1: the more div (onclickBtn) outside project-content (inparallelwith/after proj-content)
@@ -480,9 +483,9 @@ but still need to change proj-card's height thus projGallery's state so aos stil
 } /*better to add a div inside html (projectcardJs - proj-headline)
 this div is called healdline-ctrl (className); introduced in line 96*/
 /*now below design of read-more div btn design*/
-.project-card .headline-ctrl {border:2px solid white}
-.project-card .headline-ctrl .read-more {border:2px solid red;
-    margin-bottom: 8px;
+.project-card .headline-ctrl {/*border:2px solid white!*/}
+.project-card .headline-ctrl .read-more {/*border:2px solid red;!*/
+    /*margin-bottom: 7px;*/
     font-size:13px;
     /*padding: 6px;*/
     /*space up/down left/right when hover read-more div; also centralise txt (if no limit on width otherwise skew (up left meet criteria first) rather than expand div 4 directions*/
@@ -511,7 +514,7 @@ this div is called healdline-ctrl (className); introduced in line 96*/
     position:relative; /*opt for below .read-more div; but must for read-more::be4 after*/
 
 }
-.project-card .headline-ctrl .read-more div{border:1px solid yellow;
+.project-card .headline-ctrl .read-more div{/*border:1px solid yellow;!*/
     /*width: 100%;height: 100%;*/
     /*if parent w/h too big, parent display flex+child w/h 100%=inner centered child expand (inside child not centered);
     still centre but not expand if no child w/h 100%
@@ -539,6 +542,7 @@ this div is called healdline-ctrl (className); introduced in line 96*/
     position:relative;
     backdrop-filter: blur(15px);
     /*color:#fff;z-index:higer then parent el?*/
+    z-index:2;/* >=mask >=proj-content */
     overflow: hidden;
     transition: .5s;
 
@@ -562,7 +566,7 @@ this div is called healdline-ctrl (className); introduced in line 96*/
     height:100%;
     background: linear-gradient(to left, rgba(255,255,255,.15),transparent);
     transform:skewX(45deg) translateX(-100%);
-    border:1px solid red;
+    /*border:1px solid red;!*/
     transition:.5s;
 }
 .project-card .headline-ctrl .read-more:hover div::before{
@@ -613,15 +617,17 @@ this div is called healdline-ctrl (className); introduced in line 96*/
     left:0%;
     border-radius: 30px;
     transition-delay: .5s;
-}/*
-.project-card:nth-child(2) .project-content .headline-ctrl .read-more:before,
-.project-card:nth-child(2) .project-content .headline-ctrl .read-more:after{
+}
+/*.project-card:nth-child(2) .project-content .headline-ctrl .read-more:before,
+.project-card:nth-child(2) .project-content .headline-ctrl .read-more:after,
+.project-card:nth-child(5) .project-content .headline-ctrl .read-more:before,
+.project-card:nth-child(5) .project-content .headline-ctrl .read-more:after{
     background: #ff1f71;
     box-shadow: 0 0 5px #ff1f71,
     0 0 15px #ff1f71,
     0 0 30px #ff1f71,
     0 0 60px #ff1f71;
-}*/
+} /* above ok but now re-using AOS*//* below not ok
 .project-card .project-content .headline-ctrl .read-more:nth-child(2):before,
 .project-card .project-content .headline-ctrl .read-more:nth-child(2):after{
     background: #ff1f71;
@@ -629,17 +635,31 @@ this div is called healdline-ctrl (className); introduced in line 96*/
     0 0 15px #ff1f71,
     0 0 30px #ff1f71,
     0 0 60px #ff1f71;
+}*/
+.project-aos:nth-child(2) .project-card .project-content .headline-ctrl .read-more:before,
+.project-aos:nth-child(2) .project-card .project-content .headline-ctrl .read-more:after,
+.project-aos:nth-child(5) .project-card .project-content .headline-ctrl .read-more:before,
+.project-aos:nth-child(5) .project-card .project-content .headline-ctrl .read-more:after{
+    background: #ff1f71;
+    box-shadow: 0 0 5px #ff1f71,
+    0 0 15px #ff1f71,
+    0 0 30px #ff1f71,
+    0 0 60px #ff1f71;
 }
-.project-card:nth-child(1) .project-content .headline-ctrl .read-more:before,
-.project-card:nth-child(1) .project-content .headline-ctrl .read-more:after{
+.project-aos:nth-child(1) .project-card .project-content .headline-ctrl .read-more:before,
+.project-aos:nth-child(1) .project-card .project-content .headline-ctrl .read-more:after,
+.project-aos:nth-child(4) .project-card .project-content .headline-ctrl .read-more:before,
+.project-aos:nth-child(4) .project-card .project-content .headline-ctrl .read-more:after{
     background: #1eff45;
     box-shadow: 0 0 5px #1eff45,
     0 0 15px #1eff45,
     0 0 30px #1eff45,
     0 0 60px #1eff45;
 }
-.project-card:nth-child(3) .project-content .headline-ctrl .read-more:before,
-.project-card:nth-child(3) .project-content .headline-ctrl .read-more:after{
+.project-aos:nth-child(3) .project-card .project-content .headline-ctrl .read-more:before,
+.project-aos:nth-child(3) .project-card .project-content .headline-ctrl .read-more:after,
+.project-aos:nth-child(6) .project-card .project-content .headline-ctrl .read-more:before,
+.project-aos:nth-child(6) .project-card .project-content .headline-ctrl .read-more:after{
     background: #2bd2ff;
     box-shadow: 0 0 5px #2bd2ff,
     0 0 15px #2bd2ff,
@@ -679,7 +699,7 @@ this div is called healdline-ctrl (className); introduced in line 96*/
 .swiperClose {
     color: white;
     position: absolute;
-    top: 15px;
+    top: 35px;
     right: 25px;
     font-size: 35px;
     font-weight: bold;
@@ -693,10 +713,10 @@ this div is called healdline-ctrl (className); introduced in line 96*/
 
 .swiper-container {
     width: 100%;
-    padding-top: 40px;
-    padding-bottom: 200px;
-    /*border:4px solid white;*/
-    margin:60px auto
+    padding-top: 80px;
+    padding-bottom: 120px;
+    /*border:4px solid white;!*/
+    margin:90px auto
 }
 
 .swiper-slide {
@@ -714,10 +734,94 @@ this div is called healdline-ctrl (className); introduced in line 96*/
 }
 .swiper-slide img{
     width: 100%;
+    height: 100%;
     object-fit: cover;
 }
-.swiper-slide video{
+.swiper-slide video,.swiper-slide iframe{
     width: 100%;
+    height: 100%;
     object-fit: cover;
 }
 
+
+
+
+
+
+
+
+/*AOS line27 (line172 inJs outside project-card but not including popupmodal (pos abs to parent relative pos which is full webpage; so inparalle w modal (same stack level))*/
+.project-aos:nth-child(2) .project-card .project-githubLink,.project-aos:nth-child(2) .project-card .project-githubLink:before,.project-aos:nth-child(2) .project-card .project-githubLink:after,
+.project-aos:nth-child(5) .project-card .project-githubLink,.project-aos:nth-child(5) .project-card .project-githubLink:before,.project-aos:nth-child(5) .project-card .project-githubLink:after,
+.project-aos:nth-child(8) .project-card .project-githubLink,.project-aos:nth-child(8) .project-card .project-githubLink:before,.project-aos:nth-child(8) .project-card .project-githubLink:after,
+.project-aos:nth-child(11) .project-card .project-githubLink,.project-aos:nth-child(11) .project-card.project-githubLink:before,.project-aos:nth-child(11) .project-card .project-githubLink:after{
+    background: linear-gradient(45deg,#e91d63,#5d02ff);
+}
+.project-aos:nth-child(2) .project-card .project-slides,.project-aos:nth-child(2) .project-card .project-slides:before,.project-aos:nth-child(2) .project-card .project-slides:after,
+.project-aos:nth-child(5) .project-card .project-slides,.project-aos:nth-child(5) .project-card .project-slides:before,.project-aos:nth-child(5) .project-card .project-slides:after,
+.project-aos:nth-child(8) .project-card .project-slides,.project-aos:nth-child(8) .project-card .project-slides:before,.project-aos:nth-child(8) .project-card .project-slides:after,
+.project-aos:nth-child(11) .project-card .project-slides,.project-aos:nth-child(11) .project-card .project-slides:before,.project-aos:nth-child(11) .project-card .project-slides:after{
+   background: linear-gradient(45deg,#ff0000,#ffc107);
+}
+
+.project-aos:nth-child(1):hover .project-card{height:370px}
+.project-aos:nth-child(3) .project-card:hover{height:365px}
+.project-aos:nth-child(6):hover .project-card{height:300px}
+.project-aos:nth-child(2):hover .project-card{height:340px}
+.project-aos:nth-child(4) .project-card:hover{height:305px}
+.project-aos:nth-child(5) .project-card:hover{height:375px}
+.project-aos:nth-child(7):hover .project-card{height:270px}
+.project-aos:nth-child(8):hover .project-card{height:325px}
+.project-aos:nth-child(9) .project-card:hover{height:280px}
+
+
+.project-aos:nth-child(1):hover .mask{height:100px} /*.project-card:hover .mask{border:1px solid greenyellow}*/
+.project-aos:nth-child(3):hover .mask{height:95px}
+.project-aos:nth-child(6):hover .mask{height:30px}
+.project-aos:nth-child(2):hover .mask{height:70px}
+.project-aos:nth-child(4):hover .mask{height:34px}
+.project-aos:nth-child(5) .project-card:hover .mask{height:105px}
+.project-aos:nth-child(7) .project-card:hover .mask{height:60px}
+.project-aos:nth-child(8):hover .project-card .mask{height:98px}
+.project-aos:nth-child(9):hover .project-card .mask{height:40px}
+
+
+.project-aos:nth-child(1):hover .project-card.active{height:460px}
+.project-aos:nth-child(2):hover .project-card.active{height:515px}
+.project-aos:nth-child(3) .project-card:hover.active{height:520px}
+.project-aos:nth-child(4) .project-card:hover.active{height:350px}
+.project-aos:nth-child(5) .project-card:hover.active{height:485px}
+.project-aos:nth-child(6) .project-card:hover.active{height:330px}
+
+
+.project-aos:nth-child(2) .project-card .project-name p, .project-aos:nth-child(5) .project-card .project-name p,
+.project-aos:nth-child(8) .project-card .project-name p, .project-aos:nth-child(11) .project-card .project-name p{
+    /*text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #ff0080, 0 0 30px #ff0080, 0 0 40px #ff0080, 0 0 55px #ff0080, 0 0 75px #ff0080;
+    text-shadow: 0 0 20px #ff0080, 0 0 30px #ff0080, 0 0 40px #ff0080, 0 0 55px #ff0080, 0 0 75px #ff0080;*/
+    text-shadow: 0 0 20px #ff005b
+}
+.project-aos:nth-child(2) .project-card .project-name p:after, .project-aos:nth-child(5) .project-card .project-name p:after,
+.project-aos:nth-child(8) .project-card .project-name p:after, .project-aos:nth-child(11) .project-card .project-name p:after{
+    color:#ff005b;
+}
+
+.project-card:before,.project-card:after,
+.project-aos:nth-child(4) .project-card:before,.project-aos:nth-child(4) .project-card::after,
+.project-aos:nth-child(7) .project-card:before,.project-aos:nth-child(7) .project-card::after,
+.project-aos:nth-child(10) .project-card:before,.project-aos:nth-child(10) .project-card::after{
+    background: linear-gradient(235deg,#89ff00,#010615,#00bcd4);
+}
+.project-aos:nth-child(2) .project-card:before,.project-aos:nth-child(2) .project-card::after,
+.project-aos:nth-child(5) .project-card:before,.project-aos:nth-child(5) .project-card::after,
+.project-aos:nth-child(8) .project-card:before,.project-aos:nth-child(8) .project-card::after,
+.project-aos:nth-child(11) .project-card:before,.project-aos:nth-child(11) .project-card::after{
+    background: linear-gradient(235deg,#ff005e,#010615,#fbff00);
+}
+.project-aos:nth-child(3) .project-card:before,.project-aos:nth-child(3) .project-card::after,
+.project-aos:nth-child(6) .project-card:before,.project-aos:nth-child(6) .project-card::after,
+.project-aos:nth-child(9) .project-card:before,.project-aos:nth-child(9) .project-card::after,
+.project-aos:nth-child(12) .project-card:before,.project-aos:nth-child(12) .project-card::after{
+    background: linear-gradient(235deg,#772aff,#010615,#2196f3);
+    /*background: linear-gradient(45deg,#fb0094,#0000ff,#00ff00,#ffff00,#ff0000,#fb0094,#0000ff,#00ff00,#ffff00,#ff0000);
+    animation: shadowAround 20s linear infinite;*/
+}

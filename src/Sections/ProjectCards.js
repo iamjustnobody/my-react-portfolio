@@ -162,12 +162,14 @@ export const ProjectCards = React.forwardRef((props,ref) =>{
 
 //data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1500" was in project-card
 // now introduce readMore everytime changeing readMore field re-render hovered proj-card (projCard disappear fade/ease aos) so move aos to projects-container
+// however either AOS added onto projects-container or portfoli-container will make pop up modal swiper only occupy forwardRef session
     return (
         <div id="ProjectCards" className="portfolio-container" ref={ref}>
             <h1 className="heading">Project</h1>
-            <div className='projects-container' >
+            <div className='projects-container'>
                 {projGallery.map((_el,_index)=>{
                     return <>
+                                <div className='project-aos' data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1500">
                                 <div className={_el.readMore?'project-card active':'project-card'}
                                      >
                                     <div className='imgBox'>
@@ -175,7 +177,9 @@ export const ProjectCards = React.forwardRef((props,ref) =>{
                                         <video className='imgBx-image' controls>
                                             <source src={projGallery[_index].projImgSrc} type="video/mp4"></source>
                                         </video>
-                                        :<img className='imgBx-image' src={projGallery[_index].projImgSrc}/>}
+                                        :(projGallery[_index].imgType=="youtube"?
+                                                    <iframe className='imgBx-image' src={projGallery[_index].projImgSrc}></iframe>
+                                            :<img className='imgBx-image' src={projGallery[_index].projImgSrc}/>)}
                                     </div>
                                     <div className='project-content'>
                                         <div className='headline-ctrl'>
@@ -197,7 +201,7 @@ export const ProjectCards = React.forwardRef((props,ref) =>{
                                     </div>
                                     <div className={_el.readMore?'':'mask'}></div>
                                     <div className='more' onClick={()=>{handleCardHeight(_index)}}>{_el.readMore?'read less':'read more'}</div>
-                                </div>
+                                </div></div>
                                 {_el.modalShown?
                                 <div className='swiperModal' id='mySwiperModal'>
                                     <span className="swiperClose" onClick={()=>{handleModal(_index)}}>&times;</span>
@@ -206,9 +210,11 @@ export const ProjectCards = React.forwardRef((props,ref) =>{
                                             {_el.projModal?_el.projModal.map((_slide,_id)=>(
                                                 <div className="swiper-slide" >
                                                     {_slide.innerImgType=="video"?
-                                                        <iframe src="../"
-                                                                ></iframe>
-                                                        :<img src={_slide.imgSrc}/>
+                                                        <video src={_slide.imgSrc} controls></video>
+                                                        :(_slide.innerImgType=="youtube"?
+                                                                <iframe src={_slide.imgSrc}></iframe>
+                                                                : <img src={_slide.imgSrc}/>
+                                                        )
                                                     }
                                                 </div>
                                             )):<></>}
@@ -227,14 +233,21 @@ export const ProjectCards = React.forwardRef((props,ref) =>{
         </div>
     );
 })
-/*<iframe src="https://www.youtube.com/embed/rn4AuUej62M" frameBorder="0" allowfullscreen iframe-video
-                                                                ></iframe>
 /*
+{projGallery[_index].imgType=="video"?
+                                        <video className='imgBx-image' controls>
+                                            <source src={projGallery[_index].projImgSrc} type="video/mp4"></source>
+                                        </video>
+                                        :<img className='imgBx-image' src={projGallery[_index].projImgSrc}/>}
+ */
+/*<iframe src="https://www.youtube.com/embed/rn4AuUej62M" frameBorder="0" allowfullscreen iframe-video frameborder="0"
+                                                                ></iframe>
+/* //for both local html5 video autoplay & youtube video & webpage
 {_slide.innerImgType=="video"?
                                                         <video src={_slide.imgSrc} controls></video>
                                                         :<img src={_slide.imgSrc}/>
                                                     }
- */
+ *///for local html5 video; NOT for youtube video
 //{_el.projTitle.replace(/[^\]\\n/g, '\n')} //{_el.projTitle.replace('<br/>', '\n')} //{_el.projTitle.split("\n").map((i,key) => {return <div key={key}>{i}</div>;})}
 //<video src="https://youtu.be/rn4AuUej62M" type='video/youtube' controls></video>
 //or https://www.youtube.com/watch?v=rn4AuUej62M or controls="true" or controls="controls" or just contorls

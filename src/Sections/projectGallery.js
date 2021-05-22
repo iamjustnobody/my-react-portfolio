@@ -36,17 +36,19 @@ import firstMsg121 from '../staticAssets/videos/121chatroom/send first msg.webm'
 
 export const gallery=[
     {
-        projImgSrc:AroundWeb,
-        imgType: "video",
+        projImgSrc:'https://www.youtube.com/embed/-Jo-zO5Rjbk',//AroundWeb,
+        imgType: 'youtube', //"video",
+        //ytlink:true //using iframe otherwise (undefined or false) using video tag; or adding 'youtube' to imgType
         projTitle:"Around Web",
         projSummary:"• Built a geo-based social network web application with React JS. \n" +
             "• Implemented basic token based registration / login / logout flow with React Router v4 and server-side user authentication with JWT. \n" +
             "• Implemented features such as \"Create Post\", \"Nearby Posts As Gallery\" and \"Nearby Posts In Map\" with Ant Design, GeoLocation API and Google Map API.\n",
         projModal:[{
-            imgSrc: AroundWeb,
+            imgSrc: AroundWeb,//'https://www.youtube.com/embed/-Jo-zO5Rjbk',//AroundWeb,
             imgTxt: "Trolltunga, Norway",
-            innerImgType: "video",
-            ytlink:'https://www.youtube.com/embed/-Jo-zO5Rjbk'
+            innerImgType: "video",//'youtube',
+            //////ytlink:'https://www.youtube.com/embed/-Jo-zO5Rjbk',
+            //ytlink:true //using iframe otherwise (undefined or false) using video tag; or adding 'youtube' to innerImgType
         }],
         modalShown:false,
         github:'https://github.com/iamjustnobody/around-web',
@@ -147,14 +149,16 @@ export const gallery=[
                 innerImgType: "video"
             },
             {
-                imgSrc:twitterChatMsg1,
+                imgSrc:"https://www.youtube.com/embed/TOvar4Vwzzg",//twitterChatMsg1,
                 imgTxt:"Trolltunga, Norway",
-                innerImgType: "video"
+                innerImgType: 'youtube',//"video",
+                //ytlink:true //using iframe otherwise (undefined or false) using video tag; or adding 'youtube' to innerImgType
             },
             {
-                imgSrc:twitterChatMsg2,
+                imgSrc:'https://www.youtube.com/embed/F1vJGp95HuU',//twitterChatMsg2,
                 imgTxt:"Trolltunga, Norway",
-                innerImgType: "video"
+                innerImgType: 'youtube', //"video",
+                //ytlink:true //using iframe otherwise (undefined or false) using video tag; or adding 'youtube' to innerImgType
             },
             {
                 imgSrc:twitterNotification1,

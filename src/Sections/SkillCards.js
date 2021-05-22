@@ -19,10 +19,12 @@ import lgVideo from 'lightgallery/plugins/video';
 
 import "./SkillCards.css";
 
+/*
 //for testing - as belows
 import jupiterLogin from '../staticAssets/images/eventManager/Jupiter login.PNG'
 import twitterOverview1 from '../staticAssets/videos/twitterClone/all1.webm'
 import twitterComment from '../staticAssets/videos/twitterClone/mainly-comment2_IHKfg5HL_yTYu.mp4'
+*/
 
 
 
@@ -111,8 +113,11 @@ export const SkillCards = React.forwardRef((props,ref) =>{
 
 
     const [iconGallery,setIconGallery]=useState([])//not useState(null)//useState(icons) ok
-    useEffect(()=>{setIconGallery(icons);console.log('initiated ',iconGallery)},[])
-    useEffect(()=>{console.log('icons statechange ',iconGallery)},[iconGallery])
+    useEffect(()=>{
+        setIconGallery(icons);
+        //console.log('initiated ',iconGallery)
+    },[])
+    //useEffect(()=>{console.log('icons statechange ',iconGallery)},[iconGallery])
 
     //const [dynamicGallery,setDynamicGallery]=useState()
     useEffect(()=>{

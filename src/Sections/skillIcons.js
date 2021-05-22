@@ -6,6 +6,7 @@ import memes from "../staticAssets/videos/memes/memes.webm";
 import account from '../staticAssets/videos/account/account.webm'
 import todos from '../staticAssets/videos/todos/todos.webm'
 import jupiterLogin from "../staticAssets/images/eventManager/Jupiter login.PNG";
+import portfolioReactWeb from '../staticAssets/images/portfolioReactWeb.PNG'
 
 export const icons=[
     {
@@ -28,6 +29,7 @@ export const icons=[
             {
                 src:"https://myportfolio-react.firebaseapp.com",
                 subHtml: '<p>My Portfolio Website using React</p>',
+                thumb:portfolioReactWeb,
                 iframe: true
             },
             {
@@ -57,6 +59,7 @@ export const icons=[
             {
                 src:"https://myportfolio-react.firebaseapp.com",
                 subHtml: '<p>My Portfolio Website using React</p>',
+                thumb:portfolioReactWeb,
                 iframe: true
             },
             {
@@ -84,14 +87,14 @@ export const icons=[
         modalShown:false,
         dynamicEl: [
             {
-                src:jupiterLogin,
-                thumb:jupiterLogin,
-                subHtml: '<p>description</p>'
+                src:"http://static.runoob.com/images/demo/demo3.jpg",
+                thumb:"http://static.runoob.com/images/demo/demo3.jpg",
+                subHtml: '<p>to be uploaded</p>'
             },
             {
-                src:jupiterLogin,
-                thumb:jupiterLogin,
-                subHtml: '<p>description</p>'
+                src:"http://static.runoob.com/images/demo/demo4.jpg",
+                thumb:"http://static.runoob.com/images/demo/demo4.jpg",
+                subHtml: '<p>to be uploaded</p>'
             }
         ]
     },
@@ -139,7 +142,7 @@ export const icons=[
             {
                 src:"http://static.runoob.com/images/demo/demo2.jpg",
                 thumb: "http://static.runoob.com/images/demo/demo2.jpg",
-                subHtml: '<p>description</p>',
+                subHtml: '<p>reactNBA to be uploaded</p>',
             },
             {
                 src:"https://youtu.be/uWTi6YQQEmA",
@@ -195,7 +198,7 @@ export const icons=[
         dynamicEl: [
             {
                 src:"https://youtu.be/RCDrzlyc-mU",
-                subHtml: '<p>Twitter Clone</p>'
+                subHtml: '<p>Real-time Twitter-clone</p>'
             },
             {
                 src:"https://youtu.be/ErteGoDAdkI",
