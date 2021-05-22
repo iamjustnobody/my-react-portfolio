@@ -273,7 +273,7 @@ background: rgba(255,255,255,0.05);
 .modal { /*border:5px solid white;*/
     display: block;
     position: fixed;
-    z-index: 1; /*or higher, 5, cover topbar z=3 or not*/
+    z-index: 2; /*or higher, 5, cover topbar z=3 or not; higher than proj-card/proj-content 1*/
     padding-top: 108px;
     left: 0;
     top: 0;

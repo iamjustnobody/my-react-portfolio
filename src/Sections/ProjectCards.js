@@ -206,7 +206,8 @@ export const ProjectCards = React.forwardRef((props,ref) =>{
                                             {_el.projModal?_el.projModal.map((_slide,_id)=>(
                                                 <div className="swiper-slide" >
                                                     {_slide.innerImgType=="video"?
-                                                        <video src={_slide.imgSrc} controls></video>
+                                                        <iframe src="../"
+                                                                ></iframe>
                                                         :<img src={_slide.imgSrc}/>
                                                     }
                                                 </div>
@@ -226,6 +227,14 @@ export const ProjectCards = React.forwardRef((props,ref) =>{
         </div>
     );
 })
+/*<iframe src="https://www.youtube.com/embed/rn4AuUej62M" frameBorder="0" allowfullscreen iframe-video
+                                                                ></iframe>
+/*
+{_slide.innerImgType=="video"?
+                                                        <video src={_slide.imgSrc} controls></video>
+                                                        :<img src={_slide.imgSrc}/>
+                                                    }
+ */
 //{_el.projTitle.replace(/[^\]\\n/g, '\n')} //{_el.projTitle.replace('<br/>', '\n')} //{_el.projTitle.split("\n").map((i,key) => {return <div key={key}>{i}</div>;})}
 //<video src="https://youtu.be/rn4AuUej62M" type='video/youtube' controls></video>
 //or https://www.youtube.com/watch?v=rn4AuUej62M or controls="true" or controls="controls" or just contorls

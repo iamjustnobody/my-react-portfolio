@@ -25,13 +25,13 @@ import tourPwd from '../staticAssets/videos/tours/changePwd.webm'
 import tourNameEmail from '../staticAssets/videos/tours/name&email.webm'
 import tourProfPic from '../staticAssets/videos/tours/profilepic.webm'
 import tourBooking from '../staticAssets/videos/tours/booking.webm'
-import memes from '../staticAssets/videos/memes/memes.webm'
+//import memes from '../staticAssets/videos/memes/memes.webm'
 import msg121 from '../staticAssets/videos/121chatroom/receiving&sendingMsg.webm'
 import msg121b from '../staticAssets/videos/121chatroom/receiving&sendingMsg2.webm'
 import register121 from '../staticAssets/videos/121chatroom/register.webm'
 import firstMsg121 from '../staticAssets/videos/121chatroom/send first msg.webm'
-import account from '../staticAssets/videos/account/account.webm'
-import todos from '../staticAssets/videos/todos/todos.webm'
+//import account from '../staticAssets/videos/account/account.webm'
+//import todos from '../staticAssets/videos/todos/todos.webm'
 
 
 export const gallery=[
@@ -43,9 +43,10 @@ export const gallery=[
             "• Implemented basic token based registration / login / logout flow with React Router v4 and server-side user authentication with JWT. \n" +
             "• Implemented features such as \"Create Post\", \"Nearby Posts As Gallery\" and \"Nearby Posts In Map\" with Ant Design, GeoLocation API and Google Map API.\n",
         projModal:[{
-            imgSrc:AroundWeb,
-            imgTxt:"Trolltunga, Norway",
-            innerImgType: "video"
+            imgSrc: AroundWeb,
+            imgTxt: "Trolltunga, Norway",
+            innerImgType: "video",
+            ytlink:'https://www.youtube.com/embed/-Jo-zO5Rjbk'
         }],
         modalShown:false,
         github:'https://github.com/iamjustnobody/around-web',

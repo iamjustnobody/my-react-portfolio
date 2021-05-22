@@ -5,6 +5,7 @@ import aroundWeb from '../staticAssets/videos/aroundWeb/AroundWeb.mp4'
 import memes from "../staticAssets/videos/memes/memes.webm";
 import account from '../staticAssets/videos/account/account.webm'
 import todos from '../staticAssets/videos/todos/todos.webm'
+import jupiterLogin from "../staticAssets/images/eventManager/Jupiter login.PNG";
 
 export const icons=[
     {
@@ -22,7 +23,19 @@ export const icons=[
                 innerModalShown:false
             }
         ],
-        modalShown:false
+        modalShown:false,
+        dynamicEl: [
+            {
+                src:"https://myportfolio-react.firebaseapp.com",
+                subHtml: '<p>My Portfolio Website using React</p>',
+                iframe: true
+            },
+            {
+                src:jupiterLogin,
+                thumb:jupiterLogin,
+                subHtml: '<p>description</p>'
+            }
+        ]
     },
     {
         classname:"fab css fa-css3",
@@ -39,7 +52,19 @@ export const icons=[
                 innerModalShown:false
             }
         ],
-        modalShown:false
+        modalShown:false,
+        dynamicEl: [
+            {
+                src:"https://myportfolio-react.firebaseapp.com",
+                subHtml: '<p>My Portfolio Website using React</p>',
+                iframe: true
+            },
+            {
+                src:jupiterLogin,
+                thumb:jupiterLogin,
+                subHtml: '<p>description</p>'
+            }
+        ]
     },
     {
         classname:"fab javascript fa-js",
@@ -56,7 +81,19 @@ export const icons=[
                 innerModalShown:false
             }
         ],
-        modalShown:false
+        modalShown:false,
+        dynamicEl: [
+            {
+                src:jupiterLogin,
+                thumb:jupiterLogin,
+                subHtml: '<p>description</p>'
+            },
+            {
+                src:jupiterLogin,
+                thumb:jupiterLogin,
+                subHtml: '<p>description</p>'
+            }
+        ]
     },
     {
         classname:"fab react fa-react",
@@ -67,36 +104,56 @@ export const icons=[
                 imgTxt:"Around Web",
                 imgType:'video',
                 innerModalShown:true
-            },/*
+            },
             {
                 imgSrc:"http://static.runoob.com/images/demo/demo2.jpg",
                 imgTxt:"React NBA - in progress - to be added",
                 imgType:'picture',
                 innerModalShown:false
-            },*/
+            },
             {
-                imgTxt:"Memes Creator",
                 imgSrc:memes,
+                imgTxt:"Memes Creator",
                 imgType: "video",
-                innerModalShown:false,
-                github: 'https://github.com/iamjustnobody/memes-creator'
+                innerModalShown:false
             },
             {
-                imgTxt:"My Account",
                 imgSrc:account,
+                imgTxt:"My Account",
                 imgType: "video",
-                innerModalShown:false,
-                github: 'https://github.com/iamjustnobody/simple-accounting',
+                innerModalShown:false
             },
             {
-                imgTxt:"Todo List",
                 imgSrc:todos,
+                imgTxt:"Todo List",
                 imgType: "video",
-                innerModalShown:false,
-                github: 'https://github.com/iamjustnobody/react-todo',
-            },
+                innerModalShown:false
+            }
         ],
-        modalShown:false
+        modalShown:false,
+        dynamicEl: [
+            {
+                src:"https://youtu.be/-Jo-zO5Rjbk",
+                subHtml: '<p>Around Web</p>'
+            },
+            {
+                src:"http://static.runoob.com/images/demo/demo2.jpg",
+                thumb: "http://static.runoob.com/images/demo/demo2.jpg",
+                subHtml: '<p>description</p>',
+            },
+            {
+                src:"https://youtu.be/uWTi6YQQEmA",
+                subHtml: '<p>Memes Creator</p>'
+            },
+            {
+                src:"https://youtu.be/rn4AuUej62M",
+                subHtml: '<p>Simple Accounting</p>'
+            },
+            {
+                src:"https://youtu.be/YfAbm0CODuE ",
+                subHtml: '<p>React Todos</p>'
+            },
+        ]
     },
     {
         classname:"fab java fa-java",
@@ -109,7 +166,13 @@ export const icons=[
                 innerModalShown:true
             }
         ],
-        modalShown:false
+        modalShown:false,
+        dynamicEl: [
+            {
+                src:"https://youtu.be/l4EGU6x9XkA",
+                subHtml: '<p>Recommendation system</p>'
+            }
+        ]
     },
     {
         classname:"fab node fa-node",
@@ -128,6 +191,16 @@ export const icons=[
                 innerModalShown:false
             }
         ],
-        modalShown:false
+        modalShown:false,
+        dynamicEl: [
+            {
+                src:"https://youtu.be/RCDrzlyc-mU",
+                subHtml: '<p>Twitter Clone</p>'
+            },
+            {
+                src:"https://youtu.be/ErteGoDAdkI",
+                subHtml: '<p>In-tour-esting</p>'
+            }
+        ]
     }
 ]
