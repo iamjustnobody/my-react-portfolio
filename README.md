@@ -1,3 +1,3 @@
-My Portfolio Web using React, JavaScript, AOS, LightGallery, Swiper etc.
+My Portfolio Web using React, css, JavaScript, AOS, LightGallery, Swiper etc.
 
-See my web in https://myportfolio-react.firebaseapp.com/ 
+See my portfolio web in https://myportfolio-react.firebaseapp.com/ 
