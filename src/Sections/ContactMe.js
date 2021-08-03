@@ -38,7 +38,7 @@ export const ContactMe = React.forwardRef((props,ref) =>{
                             <a
                                 rel="noopener noreferrer"
                                 target="_blank"
-                                href="https://github.com/developer-junaid/"
+                                href="https://github.com/iamjustnobody/"
                             >
                                 <i className="fab fa-github" title="github" id="github"></i>
                             </a>
@@ -47,7 +47,7 @@ export const ContactMe = React.forwardRef((props,ref) =>{
                             <a
                                 rel="noopener noreferrer"
                                 target="_blank"
-                                href="https://www.facebook.com/profile.php?id=100041078220896"
+                                href="https://www.facebook.com/xiaxin.wu"
                             >
                                 <i className="fab fa-facebook" title="facebook" id="facebook"></i>
                             </a>
@@ -56,7 +56,7 @@ export const ContactMe = React.forwardRef((props,ref) =>{
                             <a
                                 rel="noopener noreferrer"
                                 target="_blank"
-                                href="https://www.linkedin.com/in/developer-junaid/"
+                                href="https://www.linkedin.com/in/xiaxin-wu-6805b961"
                             >
                                 <i className="fab fa-linkedin" title="linkedin" id="linkedin"></i>
                             </a>
@@ -65,7 +65,7 @@ export const ContactMe = React.forwardRef((props,ref) =>{
                             <a
                                 rel="noopener noreferrer"
                                 target="_blank"
-                                href="https://twitter.com/Junaid084869/"
+                                href="https://twitter.com/LegendaryWXX"
                             >
                                 <i className="fab fa-twitter" title="twitter" id="twitter"></i>
                             </a>
@@ -74,7 +74,7 @@ export const ContactMe = React.forwardRef((props,ref) =>{
                             <a
                                 rel="noopener noreferrer"
                                 target="_blank"
-                                href="https://www.instagram.com/developerjunaid/"
+                                href="https://www.instagram.com/freudandschrodingers_cat/"
                             >
                                 <i
                                     className="fab fa-instagram"
